@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialist Endocrine & Diabetes Services | Endocrinology Care Clinic</title>
+  <meta name="description" content="Comprehensive specialist services in diabetes management, thyroid ultrasound, hormone optimization, metabolic health, and pituitary-adrenal disorders.">
+  
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       FLOATING CAPSULE HEADER + MAGNETIC MENU + FULLSCREEN TRIGGER (☰)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="headerBrandLogo">
+        <div class="brand-logo-icon">
+          <i class="bi bi-activity"></i>
+        </div>
+        <div>
+          ENDOCRINOLOGY
+          <span class="brand-text-sub">& Diabetes Care Clinic</span>
+        </div>
+      </a>
+
+      <!-- Magnetic Desktop Menu -->
+      <ul class="desktop-nav" id="desktopNav">
+        <li><a href="index.html" class="desktop-nav-link">Home</a></li>
+        <li><a href="home-2.html" class="desktop-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="desktop-nav-link active">Services</a></li>
+        <li><a href="doctors.html" class="desktop-nav-link">Specialists</a></li>
+        <li><a href="insurance-billing.html" class="desktop-nav-link">Insurance & Billing</a></li>
+        <li><a href="about.html" class="desktop-nav-link">About Clinic</a></li>
+        <li><a href="patient-resources.html" class="desktop-nav-link">Resources</a></li>
+        <li><a href="contact.html" class="desktop-nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right Group: Theme + RTL + Login Icon + Dashboard Button + Mobile Hamburger (<= 1024px) -->
+      <div class="header-right-group">
+        <!-- Theme Toggle -->
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <!-- RTL Toggle (Opposing Arrows Icon) -->
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <!-- Patient Login Icon -->
+        <a href="login.html" class="btn-nav-icon" aria-label="Patient Login" title="Patient Portal Login">
+          <i class="bi bi-person-fill"></i>
+        </a>
+        <!-- Dashboard Button -->
+        <a href="dashboard.html" class="btn-primary-plum btn-pill-sm header-dash-btn">
+          <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+        <!-- Mobile Hamburger (<= 1024px) -->
+        <button class="nav-hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       FULLSCREEN NAVIGATION OVERLAY
+       ========================================================================= -->
+  <div class="fullscreen-nav-overlay" id="fullscreenNav">
+    <div class="fullscreen-nav-header">
+      <a href="index.html" class="brand-logo" style="color:#ffffff;">
+        <div class="brand-logo-icon" style="background:#ffffff; color:#25202A;"><i class="bi bi-activity"></i></div>
+        <div class="text-white">ENDOCRINOLOGY <span class="brand-text-sub" style="color:var(--color-muted-mauve);">Precision Care</span></div>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="fullscreen-close-btn" id="fullscreenCloseBtn" aria-label="Close Menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="fullscreen-nav-body">
+      <div class="container-fluid">
+        <div class="row align-items-center g-5">
+          <!-- Main Navigation Links -->
+          <div class="col-lg-7">
+            <ul class="fullscreen-nav-links">
+              <li>
+                <a href="index.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">01</span>
+                  <span class="fullscreen-link-text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">02</span>
+                  <span class="fullscreen-link-text">Home 2</span>
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="fullscreen-link-item active">
+                  <span class="fullscreen-link-num">03</span>
+                  <span class="fullscreen-link-text">Services</span>
+                </a>
+              </li>
+              <li>
+                <a href="doctors.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">04</span>
+                  <span class="fullscreen-link-text">Specialists</span>
+                </a>
+              </li>
+              <li>
+                <a href="insurance-billing.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">05</span>
+                  <span class="fullscreen-link-text">Insurance & Billing</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">06</span>
+                  <span class="fullscreen-link-text">About Clinic</span>
+                </a>
+              </li>
+              <li>
+                <a href="patient-resources.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">07</span>
+                  <span class="fullscreen-link-text">Resources</span>
+                </a>
+              </li>
+              <li>
+                <a href="contact.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">08</span>
+                  <span class="fullscreen-link-text">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Hub Card -->
+          <div class="col-lg-5">
+            <div class="fullscreen-hub-card">
+              <span class="badge-clinical badge-clinical-mauve mb-3">Patient Telemetry Portal</span>
+              <h4 class="text-white mb-2">Access Your Health Record</h4>
+              <p class="small text-white-50 mb-4">
+                Review real-time continuous glucose trends, lab panel results, and manage prescription refills securely.
+              </p>
+              <div class="d-flex flex-column gap-2 mb-4">
+                <a href="dashboard.html" class="btn-primary-plum w-100 justify-content-center" style="background:#ffffff; color:#25202A;">
+                  <i class="bi bi-speedometer2"></i> Patient Dashboard (Live Telemetry)
+                </a>
+                <div class="d-flex gap-2">
+                  <a href="login.html" class="btn-mauve w-50 justify-content-center">
+                    <i class="bi bi-shield-lock"></i> Login
+                  </a>
+                  <a href="register.html" class="btn-outline-plum w-50 justify-content-center" style="color:#ffffff; border-color:rgba(255,255,255,0.3);">
+                    <i class="bi bi-person-plus"></i> Register
+                  </a>
+                </div>
+              </div>
+
+              <hr style="border-color: rgba(255,255,255,0.15);" />
+
+              <div class="small text-white-50 d-flex flex-column gap-2">
+                <div><i class="bi bi-telephone-fill text-white"></i> <strong>Urgent Triage:</strong> (617) 555-0199</div>
+                <div><i class="bi bi-geo-alt-fill text-white"></i> Joslin Way, Longwood Medical Area, Boston MA</div>
+                <div><i class="bi bi-clock-fill text-white"></i> Mon–Fri: 7:30 AM – 5:30 PM EST</div>
+              </div>
+
+              <div class="footer-social-icons mt-4">
+                <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE HEADER
+       ========================================================================= -->
+  <section class="py-5" style="padding-top: 140px !important; background: var(--color-warm-ivory-alt); border-bottom: 1px solid var(--color-border-subtle);">
+    <div class="container text-center py-4">
+      <span class="badge-clinical badge-clinical-mauve mb-3">Clinical Programs</span>
+      <h1 class="display-5 fw-bold" style="color: #25202A;">Specialist Clinical Services</h1>
+      <p class="text-muted max-w-700 mx-auto">
+        State-of-the-art diagnostic evaluations and personalized therapeutic protocols for complex endocrine, thyroid, hormonal, and metabolic conditions.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DETAILED SERVICES SECTION
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory);">
+    <div class="container py-4">
+
+      <!-- 01: Diabetes Management -->
+      <div class="row align-items-center mb-5 pb-5 border-bottom" id="diabetes">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-sage mb-2">Pillar 01</span>
+          <h2 class="mb-3">Advanced Diabetes & Glycemic Telemetry</h2>
+          <p class="text-muted">
+            Managing diabetes requires more than isolated A1c checks. We integrate modern Continuous Glucose Monitoring (Dexcom G7, FreeStyle Libre), hybrid closed-loop insulin pumps (Omnipod, Tandem Control-IQ), and evidence-based pharmacotherapies.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Type 1 Diabetes:</strong> Advanced automated insulin delivery and hypoglycemia mitigation.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Type 2 Diabetes:</strong> Insulin resistance reversal protocols, GLP-1 RAs, and SGLT2 inhibitors.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>LADA & Maturity Onset:</strong> Precise autoantibody biomarker classification.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Gestational Diabetes:</strong> High-risk maternal metabolic surveillance.</li>
+          </ul>
+          <a href="contact.html?service=diabetes" class="btn-primary-plum btn-pill-sm mt-2">Book Diabetes Consultation</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="image/1 (12).jpg" alt="Diabetes Management" class="service-feature-img" />
+        </div>
+      </div>
+
+      <!-- 02: Thyroid & Nodules -->
+      <div class="row align-items-center mb-5 pb-5 border-bottom flex-row-reverse" id="thyroid">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-mauve mb-2">Pillar 02</span>
+          <h2 class="mb-3">Comprehensive Thyroid & Nodule Care</h2>
+          <p class="text-muted">
+            From autoimmune Hashimoto’s thyroiditis to nodular goiters, our clinic provides in-office high-resolution thyroid ultrasound and ultrasound-guided Fine Needle Aspiration (FNA) biopsy.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Autoimmune Thyroiditis:</strong> TPO and Thyroglobulin antibody tracking with optimized T4/T3 combination therapy.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Graves’ Hyperthyroidism:</strong> Anti-thyroid medication titration and radioiodine coordination.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Thyroid Ultrasound & Biopsy:</strong> On-site TI-RADS risk classification and molecular testing.</li>
+          </ul>
+          <a href="contact.html?service=thyroid" class="btn-primary-plum btn-pill-sm mt-2">Schedule Thyroid Assessment</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="image/1 (13).jpg" alt="Thyroid Care and Diagnostics" class="service-feature-img" />
+        </div>
+      </div>
+
+      <!-- 03: Hormone Therapy -->
+      <div class="row align-items-center mb-5 pb-5 border-bottom" id="hormones">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-plum mb-2">Pillar 03</span>
+          <h2 class="mb-3">Bioidentical Hormone Balancing & Pituitary Care</h2>
+          <p class="text-muted">
+            Hormonal imbalances cascade throughout every physiological system. We formulate tailored regimens for men and women experiencing endocrine deficiency or dysregulation.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>PCOS (Polycystic Ovary Syndrome):</strong> Restoring ovulatory cycles and metabolic balance.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Menopause & Andropause:</strong> Evidence-supported hormone replacement therapy (HRT/TRT).</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Adrenal & Pituitary Disorders:</strong> Cushing's syndrome, Addison's disease, and prolactinomas.</li>
+          </ul>
+          <a href="contact.html?service=hormones" class="btn-primary-plum btn-pill-sm mt-2">Request Hormone Evaluation</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="image/1 (14).jpg" alt="Hormone Therapy and Specialist Medicine" class="service-feature-img" />
+        </div>
+      </div>
+
+      <!-- 04: Metabolic Health & Weight Optimization -->
+      <div class="row align-items-center mb-5 pb-5 border-bottom flex-row-reverse" id="metabolic">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-sage mb-2">Pillar 04</span>
+          <h2 class="mb-3">Physician-Led Metabolic & Weight Optimization</h2>
+          <p class="text-muted">
+            Treating obesity as a chronic, neuro-endocrine disease. We provide medical nutrition therapy combined with modern GLP-1/GIP receptor agonists (Semaglutide, Tirzepatide) under close physician supervision.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Metabolic Syndrome:</strong> Reversing insulin resistance, elevated triglycerides, and visceral adiposity.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Cardio-Metabolic Risk:</strong> Advanced lipid fractionation (ApoB, Lp(a)) and endothelial health.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Fatty Liver (MASLD/MASH):</strong> Proactive hepatic fibrosis prevention.</li>
+          </ul>
+          <a href="contact.html?service=metabolic" class="btn-primary-plum btn-pill-sm mt-2">Join Metabolic Program</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="image/1 (15).jpg" alt="Metabolic Health and Weight Care" class="service-feature-img" />
+        </div>
+      </div>
+
+      <!-- 05: Bone Health & Osteoporosis -->
+      <div class="row align-items-center" id="bone">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-mauve mb-2">Pillar 05</span>
+          <h2 class="mb-3">Bone Mineral Metabolism & Osteoporosis</h2>
+          <p class="text-muted">
+            Comprehensive skeletal health evaluations for post-menopausal women, men with low bone density, and patients with parathyroid disorders or chronic steroid use.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>DEXA Interpretation:</strong> T-score and Z-score fracture risk modeling (FRAX).</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Anabolic & Antiresorptive Therapies:</strong> Prolia, Evenity, Tymlos, and Reclast infusions.</li>
+            <li><i class="bi bi-check-circle-fill text-success"></i> <strong>Hyperparathyroidism & Calcium:</strong> In-depth calcium and vitamin D metabolism evaluation.</li>
+          </ul>
+          <a href="contact.html?service=bone" class="btn-primary-plum btn-pill-sm mt-2">Book Bone Health Review</a>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <img src="image/1 (16).jpg" alt="Bone Health and Osteoporosis Care" class="service-feature-img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Badges & Socials -->
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="brand-logo-icon" style="background: var(--color-muted-mauve);">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h4 class="text-white mb-0">ENDOCRINOLOGY</h4>
+            </div>
+            <p>Specialist medical practice dedicated to precision endocrinology, diabetes care, thyroid ultrasound, hormone replacement, and metabolic wellness.</p>
+            <div class="d-flex gap-2 mt-4 flex-wrap">
+              <span class="badge bg-dark border border-secondary text-light">CLIA Certified</span>
+              <span class="badge bg-dark border border-secondary text-light">HIPAA Compliant</span>
+              <span class="badge bg-dark border border-secondary text-light">ATA Member</span>
+            </div>
+
+            <!-- Social Media Channels -->
+            <div class="footer-social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-col-title">Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Specialists</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="patient-resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Patient Portal Links -->
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-col-title">Patient Portal</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Sign In to Dashboard</a></li>
+            <li><a href="register.html">Register Account</a></li>
+            <li><a href="dashboard.html">CGM Telemetry Demo</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="patient-resources.html">Diabetes Education</a></li>
+            <li><a href="patient-resources.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Clinic Contact Info -->
+        <div class="col-lg-3">
+          <h5 class="footer-col-title">Clinic Contact</h5>
+          <ul class="footer-links" style="color: rgba(247, 244, 238, 0.85); font-size: 0.9rem;">
+            <li class="d-flex gap-2"><i class="bi bi-geo-alt text-danger"></i> 450 Medical Plaza, Suite 400<br>Metropolitan Health District</li>
+            <li class="d-flex gap-2"><i class="bi bi-telephone text-success"></i> Phone: (555) 382-7400</li>
+            <li class="d-flex gap-2"><i class="bi bi-printer" style="color: #C49BA5;"></i> Fax: (555) 382-7401</li>
+            <li class="d-flex gap-2"><i class="bi bi-clock text-warning"></i> Mon - Fri: 7:30 AM - 5:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Endocrinology & Diabetes Care Clinic. All rights reserved. Precision Care for Metabolic Health.</div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#">Privacy Policy</a>
+          <a href="#">HIPAA Compliance</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

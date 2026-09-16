@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Book Appointment | Endocrinology & Diabetes Care Clinic</title>
+  <meta name="description" content="Request a specialist consultation, find our clinical location, and access office hours for Endocrinology & Diabetes Care Clinic.">
+  
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       FLOATING CAPSULE HEADER + MAGNETIC MENU + FULLSCREEN TRIGGER (☰)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="headerBrandLogo">
+        <div class="brand-logo-icon">
+          <i class="bi bi-activity"></i>
+        </div>
+        <div>
+          ENDOCRINOLOGY
+          <span class="brand-text-sub">& Diabetes Care Clinic</span>
+        </div>
+      </a>
+
+      <!-- Magnetic Desktop Menu -->
+      <ul class="desktop-nav" id="desktopNav">
+        <li><a href="index.html" class="desktop-nav-link">Home</a></li>
+        <li><a href="home-2.html" class="desktop-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="desktop-nav-link">Services</a></li>
+        <li><a href="doctors.html" class="desktop-nav-link">Specialists</a></li>
+        <li><a href="insurance-billing.html" class="desktop-nav-link">Insurance & Billing</a></li>
+        <li><a href="about.html" class="desktop-nav-link">About Clinic</a></li>
+        <li><a href="patient-resources.html" class="desktop-nav-link">Resources</a></li>
+        <li><a href="contact.html" class="desktop-nav-link active">Contact</a></li>
+      </ul>
+
+      <!-- Right Group: Theme + RTL + Login Icon + Dashboard Button + Mobile Hamburger (<= 1024px) -->
+      <div class="header-right-group">
+        <!-- Theme Toggle -->
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <!-- RTL Toggle (Opposing Arrows Icon) -->
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <!-- Patient Login Icon -->
+        <a href="login.html" class="btn-nav-icon" aria-label="Patient Login" title="Patient Portal Login">
+          <i class="bi bi-person-fill"></i>
+        </a>
+        <!-- Dashboard Button -->
+        <a href="dashboard.html" class="btn-primary-plum btn-pill-sm header-dash-btn">
+          <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+        <!-- Mobile Hamburger (<= 1024px) -->
+        <button class="nav-hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       FULLSCREEN NAVIGATION OVERLAY
+       ========================================================================= -->
+  <div class="fullscreen-nav-overlay" id="fullscreenNav">
+    <div class="fullscreen-nav-header">
+      <a href="index.html" class="brand-logo" style="color:#ffffff;">
+        <div class="brand-logo-icon" style="background:#ffffff; color:#25202A;"><i class="bi bi-activity"></i></div>
+        <div class="text-white">ENDOCRINOLOGY <span class="brand-text-sub" style="color:var(--color-muted-mauve);">Precision Care</span></div>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="fullscreen-close-btn" id="fullscreenCloseBtn" aria-label="Close Menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="fullscreen-nav-body">
+      <div class="container-fluid">
+        <div class="row align-items-center g-5">
+          <!-- Main Navigation Links -->
+          <div class="col-lg-7">
+            <ul class="fullscreen-nav-links">
+              <li>
+                <a href="index.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">01</span>
+                  <span class="fullscreen-link-text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">02</span>
+                  <span class="fullscreen-link-text">Home 2</span>
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">03</span>
+                  <span class="fullscreen-link-text">Services</span>
+                </a>
+              </li>
+              <li>
+                <a href="doctors.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">04</span>
+                  <span class="fullscreen-link-text">Specialists</span>
+                </a>
+              </li>
+              <li>
+                <a href="insurance-billing.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">05</span>
+                  <span class="fullscreen-link-text">Insurance & Billing</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">06</span>
+                  <span class="fullscreen-link-text">About Clinic</span>
+                </a>
+              </li>
+              <li>
+                <a href="patient-resources.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">07</span>
+                  <span class="fullscreen-link-text">Resources</span>
+                </a>
+              </li>
+              <li>
+                <a href="contact.html" class="fullscreen-link-item active">
+                  <span class="fullscreen-link-num">08</span>
+                  <span class="fullscreen-link-text">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Hub Card -->
+          <div class="col-lg-5">
+            <div class="fullscreen-hub-card">
+              <span class="badge-clinical badge-clinical-mauve mb-3">Patient Telemetry Portal</span>
+              <h4 class="text-white mb-2">Access Your Health Record</h4>
+              <p class="small text-white-50 mb-4">
+                Review real-time continuous glucose trends, lab panel results, and manage prescription refills securely.
+              </p>
+              <div class="d-flex flex-column gap-2 mb-4">
+                <a href="dashboard.html" class="btn-primary-plum w-100 justify-content-center" style="background:#ffffff; color:#25202A;">
+                  <i class="bi bi-speedometer2"></i> Patient Dashboard (Live Telemetry)
+                </a>
+                <div class="d-flex gap-2">
+                  <a href="login.html" class="btn-mauve w-50 justify-content-center">
+                    <i class="bi bi-shield-lock"></i> Login
+                  </a>
+                  <a href="register.html" class="btn-outline-plum w-50 justify-content-center" style="color:#ffffff; border-color:rgba(255,255,255,0.3);">
+                    <i class="bi bi-person-plus"></i> Register
+                  </a>
+                </div>
+              </div>
+
+              <hr style="border-color: rgba(255,255,255,0.15);" />
+
+              <div class="small text-white-50 d-flex flex-column gap-2">
+                <div><i class="bi bi-telephone-fill text-white"></i> <strong>Urgent Triage:</strong> (617) 555-0199</div>
+                <div><i class="bi bi-geo-alt-fill text-white"></i> Joslin Way, Longwood Medical Area, Boston MA</div>
+                <div><i class="bi bi-clock-fill text-white"></i> Mon–Fri: 7:30 AM – 5:30 PM EST</div>
+              </div>
+
+              <div class="footer-social-icons mt-4">
+                <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE HEADER
+       ========================================================================= -->
+  <section class="py-5" style="padding-top: 140px !important; background: var(--color-warm-ivory-alt); border-bottom: 1px solid var(--color-border-subtle);">
+    <div class="container text-center py-4">
+      <span class="badge-clinical badge-clinical-mauve mb-3">Schedule Your Visit</span>
+      <h1 class="display-5 fw-bold" style="color: #25202A;">Book a Specialist Consultation</h1>
+      <p class="text-muted max-w-700 mx-auto">
+        Complete the form below to request an in-person or telemedicine appointment with one of our board-certified endocrinologists.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       APPOINTMENT WIZARD & CONTACT DETAILS
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory);">
+    <div class="container py-4">
+      <div class="row g-5">
+        
+        <!-- Left: Interactive Booking Form -->
+        <div class="col-lg-7">
+          <div class="p-4 p-md-5 bg-white rounded-4 border shadow-sm">
+            <h3 class="mb-4">Appointment Request Form</h3>
+            <form id="quickBookingForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Clinical Specialty Focus *</label>
+                  <select class="form-select-custom" id="bookSpecialty" required>
+                    <option value="Diabetes Management (Type 1 / 2 / CGM)">Diabetes Management (Type 1 / 2 / CGM)</option>
+                    <option value="Thyroid Disorders & Ultrasound">Thyroid Disorders & Ultrasound</option>
+                    <option value="Hormone Replacement / PCOS">Hormone Replacement / PCOS</option>
+                    <option value="Metabolic & Weight Optimization">Metabolic & Weight Optimization</option>
+                    <option value="Bone Health & Osteoporosis">Bone Health & Osteoporosis</option>
+                    <option value="General Endocrine Evaluation">General Endocrine Evaluation</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Preferred Endocrinologist</label>
+                  <select class="form-select-custom" id="bookDoctor">
+                    <option value="First Available Board-Certified MD">First Available Board-Certified MD</option>
+                    <option value="Dr. Aris Thorne (Diabetology)">Dr. Aris Thorne (Diabetology)</option>
+                    <option value="Dr. Elena Rostova (Thyroid / FNA)">Dr. Elena Rostova (Thyroid / FNA)</option>
+                    <option value="Dr. Julian Sterling (Hormones/Pituitary)">Dr. Julian Sterling (Hormones/Pituitary)</option>
+                    <option value="Dr. Clara Vance (Metabolic/Bone)">Dr. Clara Vance (Metabolic/Bone)</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Preferred Date *</label>
+                  <input type="date" class="form-control-custom" id="bookDate" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Visit Modality *</label>
+                  <select class="form-select-custom" id="bookModality">
+                    <option value="In-Person (Medical Plaza Suite 400)">In-Person (Medical Plaza Suite 400)</option>
+                    <option value="Telehealth (Secure Video Consult)">Telehealth (Secure Video Consult)</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Patient Full Name *</label>
+                  <input type="text" class="form-control-custom" placeholder="e.g. Eleanor Vance" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Phone Number *</label>
+                  <input type="tel" class="form-control-custom" placeholder="(555) 000-0000" required />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Email Address *</label>
+                  <input type="email" class="form-control-custom" placeholder="patient@example.com" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold text-dark">Insurance Carrier</label>
+                  <input type="text" class="form-control-custom" placeholder="e.g. BlueCross, Aetna, Self-Pay" />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label small fw-bold text-dark">Primary Symptoms or Reason for Visit</label>
+                  <textarea class="form-control-custom" rows="3" placeholder="Briefly describe your metabolic/hormonal symptoms or recent lab results..."></textarea>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-primary-plum w-100 justify-content-center py-3">
+                    <i class="bi bi-calendar2-check-fill"></i> Submit Appointment Request
+                  </button>
+                  <p class="text-muted small text-center mt-2 mb-0">Our clinical coordinator will confirm your appointment within 2 business hours.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Clinic Information & Map Card -->
+        <div class="col-lg-5" id="location">
+          <div class="p-4 bg-white rounded-4 border shadow-sm mb-4">
+            <h4 class="mb-3">Clinic Location & Contact</h4>
+            <ul class="list-unstyled d-flex flex-column gap-3 text-muted small mb-4">
+              <li class="d-flex gap-3">
+                <i class="bi bi-geo-alt-fill text-danger fs-5"></i>
+                <div>
+                  <strong class="text-dark d-block">Metropolitan Endocrine Center</strong>
+                  450 Medical Plaza, Suite 400<br>Metropolitan Health District (Boston / Medical Hub)
+                </div>
+              </li>
+              <li class="d-flex gap-3">
+                <i class="bi bi-telephone-fill text-success fs-5"></i>
+                <div>
+                  <strong class="text-dark d-block">Appointments & Triage</strong>
+                  Phone: (555) 382-7400<br>Fax: (555) 382-7401
+                </div>
+              </li>
+              <li class="d-flex gap-3">
+                <i class="bi bi-clock-fill text-warning fs-5"></i>
+                <div>
+                  <strong class="text-dark d-block">Office & Lab Hours</strong>
+                  Monday – Friday: 7:30 AM – 5:30 PM<br>
+                  Saturday: 8:00 AM – 1:00 PM (Lab & Telehealth only)
+                </div>
+              </li>
+            </ul>
+
+            <h6 class="text-uppercase text-muted fw-bold small mb-2">Connect with Our Medical Team</h6>
+            <div class="d-flex gap-2">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="contact-social-btn" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="contact-social-btn" title="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="contact-social-btn" title="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="contact-social-btn" title="YouTube Health"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Emergency guidance alert -->
+          <div class="p-4 rounded-4 bg-light border border-secondary-subtle">
+            <div class="d-flex gap-2 align-items-center text-dark fw-bold mb-2">
+              <i class="bi bi-exclamation-triangle-fill text-warning"></i> Urgent Medical Notice
+            </div>
+            <p class="text-muted small mb-0">
+              If you are experiencing severe hypoglycemia (&lt;54 mg/dL unresponsive to carbs), diabetic ketoacidosis symptoms, or an acute medical emergency, please dial 911 or proceed to the nearest hospital emergency room immediately.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =====================================================================
+           CLINICAL LOCATION MAP & PARKING DIRECTIONS
+           ===================================================================== -->
+      <div class="row mt-5 pt-4 border-top">
+        <div class="col-lg-12">
+          <div class="text-center max-w-700 mx-auto mb-4">
+            <span class="badge-clinical badge-clinical-mauve mb-2">Facility & Transit</span>
+            <h3>Find Our Medical Plaza</h3>
+            <p class="text-muted small">Convenient validated patient parking in Garage B. Accessible via Subway Red Line / Medical Center Station.</p>
+          </div>
+          <div class="clinic-map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.847527633215!2d-71.10825362354705!3d42.33827597119472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379965d1d642b%3A0x6a053cfa1103c800!2sJoslin%20Diabetes%20Center!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="Endocrinology & Diabetes Care Clinic Location Map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Badges & Socials -->
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="brand-logo-icon" style="background: var(--color-muted-mauve);">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h4 class="text-white mb-0">ENDOCRINOLOGY</h4>
+            </div>
+            <p>Specialist medical practice dedicated to precision endocrinology, diabetes care, thyroid ultrasound, hormone replacement, and metabolic wellness.</p>
+            <div class="d-flex gap-2 mt-4 flex-wrap">
+              <span class="badge bg-dark border border-secondary text-light">CLIA Certified</span>
+              <span class="badge bg-dark border border-secondary text-light">HIPAA Compliant</span>
+              <span class="badge bg-dark border border-secondary text-light">ATA Member</span>
+            </div>
+
+            <!-- Social Media Channels -->
+            <div class="footer-social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-col-title">Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Specialists</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="patient-resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Patient Portal Links -->
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-col-title">Patient Portal</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Sign In to Dashboard</a></li>
+            <li><a href="register.html">Register Account</a></li>
+            <li><a href="dashboard.html">CGM Telemetry Demo</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="patient-resources.html">Diabetes Education</a></li>
+            <li><a href="patient-resources.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Clinic Contact Info -->
+        <div class="col-lg-3">
+          <h5 class="footer-col-title">Clinic Contact</h5>
+          <ul class="footer-links" style="color: rgba(247, 244, 238, 0.85); font-size: 0.9rem;">
+            <li class="d-flex gap-2"><i class="bi bi-geo-alt text-danger"></i> 450 Medical Plaza, Suite 400<br>Metropolitan Health District</li>
+            <li class="d-flex gap-2"><i class="bi bi-telephone text-success"></i> Phone: (555) 382-7400</li>
+            <li class="d-flex gap-2"><i class="bi bi-printer" style="color: #C49BA5;"></i> Fax: (555) 382-7401</li>
+            <li class="d-flex gap-2"><i class="bi bi-clock text-warning"></i> Mon - Fri: 7:30 AM - 5:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Endocrinology & Diabetes Care Clinic. All rights reserved. Precision Care for Metabolic Health.</div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#">Privacy Policy</a>
+          <a href="#">HIPAA Compliance</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

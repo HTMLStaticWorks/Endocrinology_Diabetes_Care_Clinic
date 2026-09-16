@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance & Billing Guidance | Endocrinology & Diabetes Care</title>
+  <meta name="description" content="Accepted insurance carriers, clear pricing schedule, Medicare coverage, and payment options for our endocrine clinic.">
+  
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       FLOATING CAPSULE HEADER + MAGNETIC MENU + FULLSCREEN TRIGGER (☰)
+       ========================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="headerBrandLogo">
+        <div class="brand-logo-icon">
+          <i class="bi bi-activity"></i>
+        </div>
+        <div>
+          ENDOCRINOLOGY
+          <span class="brand-text-sub">& Diabetes Care Clinic</span>
+        </div>
+      </a>
+
+      <!-- Magnetic Desktop Menu -->
+      <ul class="desktop-nav" id="desktopNav">
+        <li><a href="index.html" class="desktop-nav-link">Home</a></li>
+        <li><a href="home-2.html" class="desktop-nav-link">Home 2</a></li>
+        <li><a href="services.html" class="desktop-nav-link">Services</a></li>
+        <li><a href="doctors.html" class="desktop-nav-link">Specialists</a></li>
+        <li><a href="insurance-billing.html" class="desktop-nav-link active">Insurance & Billing</a></li>
+        <li><a href="about.html" class="desktop-nav-link">About Clinic</a></li>
+        <li><a href="patient-resources.html" class="desktop-nav-link">Resources</a></li>
+        <li><a href="contact.html" class="desktop-nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right Group: Theme + RTL + Login Icon + Dashboard Button + Mobile Hamburger (<= 1024px) -->
+      <div class="header-right-group">
+        <!-- Theme Toggle -->
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <!-- RTL Toggle (Opposing Arrows Icon) -->
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <!-- Patient Login Icon -->
+        <a href="login.html" class="btn-nav-icon" aria-label="Patient Login" title="Patient Portal Login">
+          <i class="bi bi-person-fill"></i>
+        </a>
+        <!-- Dashboard Button -->
+        <a href="dashboard.html" class="btn-primary-plum btn-pill-sm header-dash-btn">
+          <i class="bi bi-speedometer2"></i> Dashboard
+        </a>
+        <!-- Mobile Hamburger (<= 1024px) -->
+        <button class="nav-hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       FULLSCREEN NAVIGATION OVERLAY
+       ========================================================================= -->
+  <div class="fullscreen-nav-overlay" id="fullscreenNav">
+    <div class="fullscreen-nav-header">
+      <a href="index.html" class="brand-logo" style="color:#ffffff;">
+        <div class="brand-logo-icon" style="background:#ffffff; color:#25202A;"><i class="bi bi-activity"></i></div>
+        <div class="text-white">ENDOCRINOLOGY <span class="brand-text-sub" style="color:var(--color-muted-mauve);">Precision Care</span></div>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn-nav-icon theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="btn-nav-icon rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout" style="background:rgba(255,255,255,0.12); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="fullscreen-close-btn" id="fullscreenCloseBtn" aria-label="Close Menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="fullscreen-nav-body">
+      <div class="container-fluid">
+        <div class="row align-items-center g-5">
+          <!-- Main Navigation Links -->
+          <div class="col-lg-7">
+            <ul class="fullscreen-nav-links">
+              <li>
+                <a href="index.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">01</span>
+                  <span class="fullscreen-link-text">Home</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">02</span>
+                  <span class="fullscreen-link-text">Home 2</span>
+                </a>
+              </li>
+              <li>
+                <a href="services.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">03</span>
+                  <span class="fullscreen-link-text">Services</span>
+                </a>
+              </li>
+              <li>
+                <a href="doctors.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">04</span>
+                  <span class="fullscreen-link-text">Specialists</span>
+                </a>
+              </li>
+              <li>
+                <a href="insurance-billing.html" class="fullscreen-link-item active">
+                  <span class="fullscreen-link-num">05</span>
+                  <span class="fullscreen-link-text">Insurance & Billing</span>
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">06</span>
+                  <span class="fullscreen-link-text">About Clinic</span>
+                </a>
+              </li>
+              <li>
+                <a href="patient-resources.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">07</span>
+                  <span class="fullscreen-link-text">Resources</span>
+                </a>
+              </li>
+              <li>
+                <a href="contact.html" class="fullscreen-link-item">
+                  <span class="fullscreen-link-num">08</span>
+                  <span class="fullscreen-link-text">Contact</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Hub Card -->
+          <div class="col-lg-5">
+            <div class="fullscreen-hub-card">
+              <span class="badge-clinical badge-clinical-mauve mb-3">Patient Telemetry Portal</span>
+              <h4 class="text-white mb-2">Access Your Health Record</h4>
+              <p class="small text-white-50 mb-4">
+                Review real-time continuous glucose trends, lab panel results, and manage prescription refills securely.
+              </p>
+              <div class="d-flex flex-column gap-2 mb-4">
+                <a href="dashboard.html" class="btn-primary-plum w-100 justify-content-center" style="background:#ffffff; color:#25202A;">
+                  <i class="bi bi-speedometer2"></i> Patient Dashboard (Live Telemetry)
+                </a>
+                <div class="d-flex gap-2">
+                  <a href="login.html" class="btn-mauve w-50 justify-content-center">
+                    <i class="bi bi-shield-lock"></i> Login
+                  </a>
+                  <a href="register.html" class="btn-outline-plum w-50 justify-content-center" style="color:#ffffff; border-color:rgba(255,255,255,0.3);">
+                    <i class="bi bi-person-plus"></i> Register
+                  </a>
+                </div>
+              </div>
+
+              <hr style="border-color: rgba(255,255,255,0.15);" />
+
+              <div class="small text-white-50 d-flex flex-column gap-2">
+                <div><i class="bi bi-telephone-fill text-white"></i> <strong>Urgent Triage:</strong> (617) 555-0199</div>
+                <div><i class="bi bi-geo-alt-fill text-white"></i> Joslin Way, Longwood Medical Area, Boston MA</div>
+                <div><i class="bi bi-clock-fill text-white"></i> Mon–Fri: 7:30 AM – 5:30 PM EST</div>
+              </div>
+
+              <div class="footer-social-icons mt-4">
+                <a href="https://linkedin.com" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE HEADER
+       ========================================================================= -->
+  <section class="py-5" style="padding-top: 140px !important; background: var(--color-warm-ivory-alt); border-bottom: 1px solid var(--color-border-subtle);">
+    <div class="container text-center py-4">
+      <span class="badge-clinical badge-clinical-sage mb-3">Financial Guidance</span>
+      <h1 class="display-5 fw-bold" style="color: #25202A;">Insurance Plans & Transparent Billing</h1>
+      <p class="text-muted max-w-700 mx-auto">
+        We believe clinical excellence requires financial clarity. Explore accepted carriers, self-pay options, and hassle-free payment channels.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INSURANCE SEARCH & ACCEPTED CARRIERS
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory);">
+    <div class="container py-4">
+      <div class="row align-items-center mb-4">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-mauve mb-2">Network Verification</span>
+          <h2>Search Your Health Plan</h2>
+          <p class="text-muted">Type your insurance carrier below to verify in-network participation.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="input-group input-group-lg shadow-sm">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+            <input type="text" class="form-control border-start-0" id="insuranceSearch" placeholder="Type carrier (e.g. Aetna, BlueCross, Medicare, Cigna)..." />
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3" id="insuranceCardsList">
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">BlueCross BlueShield</strong>
+            <small class="text-muted">PPO, HMO & Federal</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">Aetna Healthcare</strong>
+            <small class="text-muted">Commercial & Medicare Choice</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">UnitedHealthcare (UHC)</strong>
+            <small class="text-muted">Choice Plus & Select</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">Cigna HealthCare</strong>
+            <small class="text-muted">Open Access Plus & POS</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">Medicare Part B</strong>
+            <small class="text-muted">Traditional & Advantage</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">Humana Healthcare</strong>
+            <small class="text-muted">Preferred Provider Org</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">Tricare & VA Choice</strong>
+            <small class="text-muted">Military & Veterans</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 insurance-card-item">
+          <div class="p-3 bg-white border rounded-3 w-100 text-center shadow-sm">
+            <i class="bi bi-shield-check text-success fs-3 mb-2 d-block"></i>
+            <strong class="text-dark d-block">HSA / FSA Direct Pay</strong>
+            <small class="text-muted">Tax-Advantaged Accounts</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TRANSPARENT SELF-PAY PRICING
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory-alt); border-top: 1px solid var(--color-border-subtle);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-clinical badge-clinical-mauve mb-2">No Surprises Act</span>
+        <h2>Self-Pay & Out-of-Pocket Transparency</h2>
+        <p class="text-muted">We provide upfront Good Faith Estimates before every appointment.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 border shadow-sm text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-dark mb-2">Initial Intake</span>
+              <h4 class="mb-2">Comprehensive Specialist Evaluation</h4>
+              <div class="display-6 fw-bold my-3" style="color: #25202A;">$285</div>
+              <p class="text-muted small">Includes 45-minute physician assessment, symptom review, endocrine history, and personalized treatment plan.</p>
+            </div>
+            <a href="contact.html" class="btn-primary-plum btn-pill-sm w-100 justify-content-center">Schedule Intake</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 border shadow-sm text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-dark mb-2">Established Follow-Up</span>
+              <h4 class="mb-2">Quarterly Protocol Review</h4>
+              <div class="display-6 fw-bold my-3" style="color: #25202A;">$145</div>
+              <p class="text-muted small">In-depth dosage titration, lab result comparison, telemedicine or in-person consultation.</p>
+            </div>
+            <a href="contact.html" class="btn-primary-plum btn-pill-sm w-100 justify-content-center">Schedule Follow-up</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white rounded-4 border shadow-sm text-center h-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-light text-dark mb-2">Diagnostic Suite</span>
+              <h4 class="mb-2">Thyroid Ultrasound & Biopsy</h4>
+              <div class="display-6 fw-bold my-3" style="color: #25202A;">$360</div>
+              <p class="text-muted small">High-resolution neck sonography with immediate radiologic interpretation and TI-RADS reporting.</p>
+            </div>
+            <a href="contact.html" class="btn-primary-plum btn-pill-sm w-100 justify-content-center">Schedule Ultrasound</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: NO SURPRISES ACT & GOOD FAITH ESTIMATE RIGHTS
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory);">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge-clinical badge-clinical-sage mb-3">Consumer Protection</span>
+          <h2>Your Rights: Upfront & Itemized Billing</h2>
+          <p class="text-muted">
+            Under the federal No Surprises Act, health care providers must give patients who do not have insurance or who are not using insurance an estimate of the bill for medical items and services.
+          </p>
+          <ul class="timeline-feature-list">
+            <li><i class="bi bi-shield-check text-success"></i> <strong>Good Faith Estimate (GFE):</strong> Provided in writing at least 1 business day before your scheduled clinical visit.</li>
+            <li><i class="bi bi-shield-check text-success"></i> <strong>No Hidden Facility Surcharges:</strong> You will only be billed for physician professional fees and specific on-site diagnostic assays.</li>
+            <li><i class="bi bi-shield-check text-success"></i> <strong>Dispute Resolution Rights:</strong> If your final bill is $400 or more above your GFE, you have federal rights to dispute.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 bg-white rounded-4 border shadow-sm">
+            <h5 class="mb-3"><i class="bi bi-receipt-cutoff text-primary"></i> Sample Itemized Encounter</h5>
+            <div class="d-flex justify-content-between py-2 border-bottom small text-muted">
+              <span>Comprehensive Specialist Consultation (99204)</span>
+              <strong>$285.00</strong>
+            </div>
+            <div class="d-flex justify-content-between py-2 border-bottom small text-muted">
+              <span>High-Resolution Thyroid Sonogram (76536)</span>
+              <strong>$180.00</strong>
+            </div>
+            <div class="d-flex justify-content-between py-2 border-bottom small text-muted">
+              <span>CLIA Diagnostic Hemoglobin A1c (83036)</span>
+              <strong>$35.00</strong>
+            </div>
+            <div class="d-flex justify-content-between pt-3 fw-bold text-dark">
+              <span>Estimated Self-Pay Out-of-Pocket</span>
+              <span class="text-success">$500.00</span>
+            </div>
+            <small class="text-muted d-block mt-2" style="font-size: 0.75rem;">* Insurance co-pays and deductibles vary per individual plan policy.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: HSA / FSA ELIGIBLE EXPENSES GUIDE
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-warm-ivory-alt); border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);">
+    <div class="container py-4">
+      <div class="text-center max-w-700 mx-auto mb-5">
+        <span class="badge-clinical badge-clinical-mauve mb-2">Tax-Advantaged Healthcare</span>
+        <h2>Maximize Your HSA & FSA Benefits</h2>
+        <p class="text-muted">Use pre-tax Health Savings Accounts or Flexible Spending Accounts for your metabolic healthcare.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="p-4 bg-white rounded-4 border text-center h-100 shadow-sm">
+            <i class="bi bi-broadcast text-danger fs-1 mb-2 d-block"></i>
+            <h6 class="fw-bold">CGM Sensors & Transmitters</h6>
+            <p class="small text-muted mb-0">100% eligible with physician prescription (Dexcom, FreeStyle Libre).</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-4 bg-white rounded-4 border text-center h-100 shadow-sm">
+            <i class="bi bi-capsule-pill text-primary fs-1 mb-2 d-block"></i>
+            <h6 class="fw-bold">Prescription Hormones</h6>
+            <p class="small text-muted mb-0">Levothyroxine, Cytomel, bioidentical HRT, and GLP-1 medications.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-4 bg-white rounded-4 border text-center h-100 shadow-sm">
+            <i class="bi bi-cpu text-success fs-1 mb-2 d-block"></i>
+            <h6 class="fw-bold">Insulin Pumps & Pods</h6>
+            <p class="small text-muted mb-0">Omnipod pods, infusion sets, cartridges, and continuous sensors.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-4 bg-white rounded-4 border text-center h-100 shadow-sm">
+            <i class="bi bi-clipboard2-pulse text-warning fs-1 mb-2 d-block"></i>
+            <h6 class="fw-bold">CLIA Endocrine Labs</h6>
+            <p class="small text-muted mb-0">Specialized thyroid panels, fasting insulin, and lipid subfraction assays.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6: PAYMENT PLANS & FINANCIAL HARDSHIP
+       ========================================================================= -->
+  <section class="py-5" style="background: var(--color-midnight-plum); color: #FFF;">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="badge-clinical badge-clinical-sage mb-3">Compassionate Care</span>
+          <h2 class="text-white mb-3">0% Interest Payment Plans & Hardship Programs</h2>
+          <p style="color: rgba(247, 244, 238, 0.8);" class="mb-4">
+            We believe that no patient should delay necessary endocrine or diabetes treatment due to short-term financial constraints. We offer customized monthly repayment options and sliding-scale fee assistance.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="contact.html?subject=billing-inquiry" class="btn-mauve">Apply for Payment Plan</a>
+            <a href="tel:5553827400" class="btn-outline-plum" style="color:#FFF; border-color:rgba(255,255,255,0.4);"><i class="bi bi-telephone"></i> Call Billing Desk</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-white border-opacity-10">
+            <h5 class="text-white mb-3"><i class="bi bi-credit-card-2-front"></i> Fast Billing Assistance</h5>
+            <ul class="list-unstyled text-white small d-flex flex-column gap-2 mb-0">
+              <li><i class="bi bi-check2 text-success"></i> 3, 6, and 12-month equal zero-interest installments.</li>
+              <li><i class="bi bi-check2 text-success"></i> Manufacturer co-pay savings card coordination.</li>
+              <li><i class="bi bi-check2 text-success"></i> Direct billing advocate assigned to your account.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SITE FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: Brand & Badges & Socials -->
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="brand-logo-icon" style="background: var(--color-muted-mauve);">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h4 class="text-white mb-0">ENDOCRINOLOGY</h4>
+            </div>
+            <p>Specialist medical practice dedicated to precision endocrinology, diabetes care, thyroid ultrasound, hormone replacement, and metabolic wellness.</p>
+            <div class="d-flex gap-2 mt-4 flex-wrap">
+              <span class="badge bg-dark border border-secondary text-light">CLIA Certified</span>
+              <span class="badge bg-dark border border-secondary text-light">HIPAA Compliant</span>
+              <span class="badge bg-dark border border-secondary text-light">ATA Member</span>
+            </div>
+
+            <!-- Social Media Channels -->
+            <div class="footer-social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-col-title">Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home-2.html">Home 2</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Specialists</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="about.html">About Clinic</a></li>
+            <li><a href="patient-resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Patient Portal Links -->
+        <div class="col-6 col-lg-3">
+          <h5 class="footer-col-title">Patient Portal</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Sign In to Dashboard</a></li>
+            <li><a href="register.html">Register Account</a></li>
+            <li><a href="dashboard.html">CGM Telemetry Demo</a></li>
+            <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+            <li><a href="patient-resources.html">Diabetes Education</a></li>
+            <li><a href="patient-resources.html#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Clinic Contact Info -->
+        <div class="col-lg-3">
+          <h5 class="footer-col-title">Clinic Contact</h5>
+          <ul class="footer-links" style="color: rgba(247, 244, 238, 0.85); font-size: 0.9rem;">
+            <li class="d-flex gap-2"><i class="bi bi-geo-alt text-danger"></i> 450 Medical Plaza, Suite 400<br>Metropolitan Health District</li>
+            <li class="d-flex gap-2"><i class="bi bi-telephone text-success"></i> Phone: (555) 382-7400</li>
+            <li class="d-flex gap-2"><i class="bi bi-printer" style="color: #C49BA5;"></i> Fax: (555) 382-7401</li>
+            <li class="d-flex gap-2"><i class="bi bi-clock text-warning"></i> Mon - Fri: 7:30 AM - 5:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 Endocrinology & Diabetes Care Clinic. All rights reserved. Precision Care for Metabolic Health.</div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#">Privacy Policy</a>
+          <a href="#">HIPAA Compliance</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

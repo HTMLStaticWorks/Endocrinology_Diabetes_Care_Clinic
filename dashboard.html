@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Health Dashboard | Endocrinology & Diabetes Care</title>
+  <meta name="description" content="Personalized metabolic health telemetry, continuous glucose logs, medication schedules, and clinical laboratory trends.">
+  
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- =======================================================================
+         DASHBOARD SIDEBAR (DESKTOP & RESPONSIVE OFFCANVAS ON MOBILE/TABLET)
+         ======================================================================= -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none text-white">
+          <div class="dash-logo-icon"><i class="bi bi-activity"></i></div>
+          <div class="dash-logo-text">
+            ENDOCRINOLOGY
+            <span>Patient Telemetry</span>
+          </div>
+        </a>
+        <!-- Close button for mobile sidebar -->
+        <button class="btn text-white ms-auto d-lg-none p-1" id="dashSidebarCloseBtn" aria-label="Close Sidebar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Patient Identity Box -->
+      <div class="dash-patient-badge">
+        <img src="image/1 (19).jpg" alt="Eleanor Vance" class="dash-patient-avatar" />
+        <div class="dash-patient-info">
+          <h6>Eleanor Vance</h6>
+          <p>MRN: #END-8842 · Type 2 & Hashimoto's</p>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="dash-nav-menu">
+        <li class="dash-nav-item">
+          <a class="dash-nav-link active" data-tab="tab-overview">
+            <i class="bi bi-speedometer2"></i> Overview
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-appointments">
+            <i class="bi bi-calendar2-week"></i> Appointments
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-glucose">
+            <i class="bi bi-droplet-half"></i> Daily Blood Sugar
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-medications">
+            <i class="bi bi-capsule"></i> Medication Schedule
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-labs">
+            <i class="bi bi-graph-up"></i> Lab Result Trends
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-prescriptions">
+            <i class="bi bi-arrow-repeat"></i> Prescription Refills
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-profile">
+            <i class="bi bi-person-gear"></i> Patient Profile
+          </a>
+        </li>
+        <li class="dash-nav-item">
+          <a class="dash-nav-link" data-tab="tab-reports">
+            <i class="bi bi-file-earmark-medical"></i> Reports & Records
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sidebar Footer -->
+      <div class="dash-sidebar-footer">
+        <a href="index.html" class="dash-logout-btn">
+          <i class="bi bi-box-arrow-left"></i> Exit to Public Site
+        </a>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN DASHBOARD WRAPPER
+         ======================================================================= -->
+    <div class="dash-main-wrapper">
+      
+      <!-- TOPBAR HEADER -->
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="dash-mobile-menu-btn" id="dashMobileMenuBtn" aria-label="Open Navigation">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div class="dash-greeting">
+            <h4>GOOD MORNING, ELEANOR</h4>
+            <p>Your Health Overview · Telemetry synced 2 mins ago</p>
+          </div>
+        </div>
+
+        <div class="dash-topbar-right">
+          <!-- Theme Toggle -->
+          <button class="btn-icon-topbar theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL Toggle (Opposing Arrows) -->
+          <button class="btn-icon-topbar rtl-toggle-btn" aria-label="Toggle RTL" title="Toggle RTL / LTR Layout">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+
+          <!-- Status Pill -->
+          <div class="dash-status-pill d-none d-sm-flex">
+            <div class="dash-status-indicator"></div>
+            <span>Target Range 88% TIR</span>
+          </div>
+
+          <!-- Notification Drawer Trigger -->
+          <button class="btn-icon-topbar" data-bs-toggle="offcanvas" data-bs-target="#notificationDrawer" aria-label="View Notifications">
+            <i class="bi bi-bell"></i>
+            <span class="badge-dot"></span>
+          </button>
+
+          <!-- Quick Refill Action -->
+          <button class="btn-mauve btn-pill-sm d-none d-md-inline-flex" onclick="document.querySelector('[data-tab=tab-prescriptions]').click();">
+            <i class="bi bi-capsule"></i> Quick Refill
+          </button>
+        </div>
+      </header>
+
+      <!-- DASHBOARD CONTENT BODY -->
+      <main class="dash-content-body">
+        
+        <!-- ===================================================================
+             TAB 1: HEALTH OVERVIEW
+             =================================================================== -->
+        <div class="dash-tab-pane active" id="tab-overview">
+          
+          <!-- Stat Grid -->
+          <div class="dash-stat-grid">
+            <!-- Blood Sugar -->
+            <div class="dash-stat-card">
+              <div class="dash-stat-header">
+                <span class="dash-stat-title">Blood Sugar (CGM)</span>
+                <div class="dash-stat-icon icon-bg-glucose"><i class="bi bi-droplet-fill"></i></div>
+              </div>
+              <div class="dash-stat-val" id="statCurrentGlucose">112 mg/dL</div>
+              <div class="dash-stat-meta meta-target-good">
+                <i class="bi bi-check-circle-fill"></i> In Target Range (70–140)
+              </div>
+            </div>
+
+            <!-- Medication Adherence -->
+            <div class="dash-stat-card">
+              <div class="dash-stat-header">
+                <span class="dash-stat-title">Medication</span>
+                <div class="dash-stat-icon icon-bg-meds"><i class="bi bi-capsule-pill"></i></div>
+              </div>
+              <div class="dash-stat-val" id="statMedicationCount">2 / 3 Taken</div>
+              <div class="dash-stat-meta text-muted">
+                <i class="bi bi-clock"></i> Evening Metformin pending
+              </div>
+            </div>
+
+            <!-- Fasting Insulin / eA1c -->
+            <div class="dash-stat-card">
+              <div class="dash-stat-header">
+                <span class="dash-stat-title">Latest eA1c</span>
+                <div class="dash-stat-icon icon-bg-insulin"><i class="bi bi-activity"></i></div>
+              </div>
+              <div class="dash-stat-val">5.8 %</div>
+              <div class="dash-stat-meta text-success">
+                <i class="bi bi-arrow-down-right"></i> Down from 6.2% (Jun 2026)
+              </div>
+            </div>
+
+            <!-- Upcoming Appointment Card -->
+            <div class="dash-stat-card">
+              <div class="dash-stat-header">
+                <span class="dash-stat-title">Next Visit</span>
+                <div class="dash-stat-icon icon-bg-visit"><i class="bi bi-calendar-check"></i></div>
+              </div>
+              <div class="dash-stat-val" style="font-size: 1.25rem;">24 Sep · 10:30 AM</div>
+              <div class="dash-stat-meta text-dark fw-semibold">
+                Dr. Aris Thorne (In-Person)
+              </div>
+            </div>
+          </div>
+
+          <!-- Continuous Glucose Trend Chart -->
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <div>
+                <h5 class="dash-panel-title"><i class="bi bi-graph-up text-danger"></i> Continuous Glucose Trend (24-Hour Stream)</h5>
+                <p class="text-muted small mb-0">Real-time Dexcom G7 telemetry with target glycemic corridor (70–140 mg/dL)</p>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-secondary" onclick="alert('Timeframe switched to 7-Day Average');">7-Day</button>
+                <button class="btn btn-sm btn-outline-secondary" onclick="alert('Timeframe switched to 14-Day AGP Report');">14-Day AGP</button>
+                <button class="btn btn-sm btn-dark active">Today (24h)</button>
+              </div>
+            </div>
+            <div class="dash-chart-container">
+              <canvas id="glucoseTrendChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Two-Column Row: Today's Medication Checklist & Upcoming Visit Details -->
+          <div class="row g-4">
+            <!-- Left: Medication Checklist -->
+            <div class="col-lg-6">
+              <div class="dash-panel h-100">
+                <div class="dash-panel-header">
+                  <h5 class="dash-panel-title"><i class="bi bi-check2-square text-primary"></i> Daily Medication Checklist</h5>
+                  <small class="text-muted">Tap to toggle dose</small>
+                </div>
+
+                <div class="med-item-row taken" id="med1">
+                  <div class="med-info">
+                    <h6>Levothyroxine — 88 mcg</h6>
+                    <p>Morning (Fasting, 30 min before coffee)</p>
+                  </div>
+                  <button class="med-check-btn"><i class="bi bi-check-circle-fill"></i> Taken</button>
+                </div>
+
+                <div class="med-item-row taken" id="med2">
+                  <div class="med-info">
+                    <h6>Metformin ER — 500 mg</h6>
+                    <p>Morning with Breakfast</p>
+                  </div>
+                  <button class="med-check-btn"><i class="bi bi-check-circle-fill"></i> Taken</button>
+                </div>
+
+                <div class="med-item-row" id="med3">
+                  <div class="med-info">
+                    <h6>Metformin ER — 500 mg</h6>
+                    <p>Evening with Dinner (8:00 PM)</p>
+                  </div>
+                  <button class="med-check-btn"><i class="bi bi-circle"></i> Log Dose</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Upcoming Specialist Appointment Details -->
+            <div class="col-lg-6">
+              <div class="dash-panel h-100">
+                <div class="dash-panel-header">
+                  <h5 class="dash-panel-title"><i class="bi bi-calendar-event text-warning"></i> Upcoming Specialist Appointment</h5>
+                  <span class="badge bg-success-subtle text-success border border-success-subtle">Confirmed</span>
+                </div>
+
+                <div class="d-flex gap-3 align-items-center mb-3 p-3 bg-light rounded-3">
+                  <img src="image/1 (8).jpg" alt="Dr. Aris Thorne" class="rounded-circle" style="width: 54px; height: 54px; object-fit: cover;" />
+                  <div>
+                    <strong class="d-block text-dark">Dr. Aris Thorne, MD, FACE</strong>
+                    <small class="text-muted">Endocrinologist & Diabetologist</small>
+                    <div class="small fw-semibold text-dark mt-1">Thursday, September 24 · 10:30 AM</div>
+                  </div>
+                </div>
+
+                <p class="text-muted small mb-3">
+                  <strong>Location:</strong> Suite 400, Metropolitan Medical Plaza<br>
+                  <strong>Preparation:</strong> Fasting blood draw requested 30 minutes prior at on-site laboratory.
+                </p>
+
+                <div class="d-flex gap-2">
+                  <a href="javascript:alert('Appointment details opened.');" class="btn btn-outline-dark btn-sm flex-fill">View Appointment Details</a>
+                  <a href="javascript:alert('Reschedule request sent to clinic coordinator.');" class="btn btn-outline-secondary btn-sm">Reschedule</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===================================================================
+             TAB 2: SPECIALIST APPOINTMENTS
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-appointments">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <h5 class="dash-panel-title"><i class="bi bi-calendar2-range"></i> Specialist Appointments</h5>
+              <button class="btn-primary-plum btn-pill-sm" onclick="alert('Opening appointment scheduler wizard...');">
+                <i class="bi bi-plus-lg"></i> Book New Appointment
+              </button>
+            </div>
+
+            <!-- Active Appointment Card -->
+            <div class="p-4 bg-light rounded-4 border mb-4">
+              <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                <span class="badge-clinical badge-clinical-mauve">Upcoming In-Person Visit</span>
+                <span class="text-muted small"><i class="bi bi-clock"></i> Duration: 30 minutes</span>
+              </div>
+              <div class="row align-items-center g-3">
+                <div class="col-md-7">
+                  <h4>Quarterly Diabetes & Thyroid Evaluation</h4>
+                  <p class="text-muted small mb-1">Physician: <strong>Dr. Aris Thorne, MD</strong></p>
+                  <p class="text-muted small mb-0">Date & Time: <strong>September 24, 2026 at 10:30 AM EST</strong></p>
+                </div>
+                <div class="col-md-5 text-md-end">
+                  <button class="btn btn-outline-dark btn-sm me-2" onclick="alert('Driving directions sent to SMS.');"><i class="bi bi-geo-alt"></i> Directions</button>
+                  <button class="btn btn-danger btn-sm" onclick="confirm('Cancel this appointment?') && alert('Appointment cancelled.');">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Past History -->
+            <h6 class="text-uppercase text-muted fw-bold small mb-3">Past Encounters</h6>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr class="table-light">
+                    <th>Date</th>
+                    <th>Physician</th>
+                    <th>Visit Type</th>
+                    <th>Summary</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Jun 18, 2026</td>
+                    <td>Dr. Aris Thorne</td>
+                    <td>Telehealth Follow-up</td>
+                    <td>A1c reduction to 5.9%. Adjusted Metformin.</td>
+                    <td><button class="btn btn-sm btn-outline-secondary btn-view-report" data-report-title="Clinical Encounter Summary - Jun 18, 2026" data-report-date="Jun 18, 2026">View Notes</button></td>
+                  </tr>
+                  <tr>
+                    <td>Mar 12, 2026</td>
+                    <td>Dr. Elena Rostova</td>
+                    <td>Thyroid Ultrasound</td>
+                    <td>Benign TI-RADS 2 colloid nodule left lobe stable.</td>
+                    <td><button class="btn btn-sm btn-outline-secondary btn-view-report" data-report-title="Thyroid Ultrasound Diagnostic Report" data-report-date="Mar 12, 2026">View Imaging</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 3: DAILY BLOOD SUGAR LOG
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-glucose">
+          <div class="row g-4">
+            <!-- Left: Add New Entry Form -->
+            <div class="col-lg-5">
+              <div class="dash-panel">
+                <h5 class="dash-panel-title mb-3"><i class="bi bi-plus-circle text-danger"></i> Log Glucose Reading</h5>
+                <form id="logGlucoseForm">
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold">Blood Glucose (mg/dL) *</label>
+                    <input type="number" class="form-control-custom" id="logGlucoseValue" placeholder="e.g. 118" min="30" max="500" required />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold">Meal Timing / Context *</label>
+                    <select class="form-select-custom" id="logGlucoseTiming" required>
+                      <option value="Fasting (Morning)">Fasting (Morning)</option>
+                      <option value="Post-Breakfast (2h)">Post-Breakfast (2h)</option>
+                      <option value="Pre-Lunch">Pre-Lunch</option>
+                      <option value="Post-Lunch (2h)">Post-Lunch (2h)</option>
+                      <option value="Pre-Dinner">Pre-Dinner</option>
+                      <option value="Post-Dinner (2h)">Post-Dinner (2h)</option>
+                      <option value="Bedtime">Bedtime</option>
+                      <option value="Nighttime">Nighttime Check</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label small fw-bold">Clinical Notes / Carbohydrates</label>
+                    <input type="text" class="form-control-custom" id="logGlucoseNotes" placeholder="e.g. 35g carbs, brisk walk 20 min" />
+                  </div>
+                  <button type="submit" class="btn-primary-plum w-100 justify-content-center py-2">
+                    <i class="bi bi-check2-circle"></i> Save Glucose Reading
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right: Log History Table -->
+            <div class="col-lg-7">
+              <div class="dash-panel">
+                <div class="dash-panel-header">
+                  <h5 class="dash-panel-title"><i class="bi bi-clock-history"></i> Recent Telemetry Entries</h5>
+                  <button class="btn btn-sm btn-outline-secondary" onclick="alert('Exporting glucose telemetry CSV...');"><i class="bi bi-download"></i> Export CSV</button>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-middle">
+                    <thead>
+                      <tr class="table-light">
+                        <th>Timestamp</th>
+                        <th>Context</th>
+                        <th>Reading</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody id="glucoseHistoryTableBody">
+                      <tr>
+                        <td><strong>Today, 8:15 AM</strong></td>
+                        <td><span class="badge bg-light text-dark border">Fasting</span></td>
+                        <td><strong style="color: #25202A;">105 mg/dL</strong></td>
+                        <td><span class="status-badge-lab status-optimal">In Target</span></td>
+                        <td><small class="text-muted">Standard morning</small></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Today, 10:30 AM</strong></td>
+                        <td><span class="badge bg-light text-dark border">Post-Bfast</span></td>
+                        <td><strong style="color: #25202A;">138 mg/dL</strong></td>
+                        <td><span class="status-badge-lab status-optimal">In Target</span></td>
+                        <td><small class="text-muted">Oatmeal & berries</small></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Yesterday, 9:45 PM</strong></td>
+                        <td><span class="badge bg-light text-dark border">Bedtime</span></td>
+                        <td><strong style="color: #25202A;">118 mg/dL</strong></td>
+                        <td><span class="status-badge-lab status-optimal">In Target</span></td>
+                        <td><small class="text-muted">Evening calm</small></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 4: MEDICATION SCHEDULE
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-medications">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <h5 class="dash-panel-title"><i class="bi bi-capsule text-primary"></i> Active Medication Protocol</h5>
+              <span class="badge bg-light text-dark border">Prescribed by Dr. Aris Thorne</span>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="p-4 bg-white rounded-4 border h-100">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="mb-0">Levothyroxine Sodium</h5>
+                    <span class="badge-clinical badge-clinical-mauve">Thyroid</span>
+                  </div>
+                  <p class="text-muted small mb-2">Dose: <strong>88 mcg Oral Tablet</strong> · 1x daily (Morning on empty stomach)</p>
+                  <div class="small text-secondary mb-3">Remaining: <strong>42 tablets</strong> (Refill not yet needed)</div>
+                  <button class="btn btn-outline-plum btn-sm w-100 btn-request-refill" data-med="Levothyroxine 88mcg">Request Refill</button>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="p-4 bg-white rounded-4 border h-100">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="mb-0">Metformin Hydrochloride ER</h5>
+                    <span class="badge-clinical badge-clinical-sage">Glycemic</span>
+                  </div>
+                  <p class="text-muted small mb-2">Dose: <strong>500 mg Extended Release</strong> · 2x daily with meals</p>
+                  <div class="small text-secondary mb-3">Remaining: <strong>14 tablets</strong> (Refill recommended)</div>
+                  <button class="btn btn-primary-plum btn-sm w-100 btn-request-refill" data-med="Metformin ER 500mg">Request Refill</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 5: LAB RESULT TRENDS
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-labs">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <h5 class="dash-panel-title"><i class="bi bi-graph-up-arrow text-success"></i> Longitudinal Lab Trends</h5>
+              <span class="badge bg-light text-dark border">CLIA Laboratory Sync</span>
+            </div>
+
+            <div class="dash-chart-container mb-4">
+              <canvas id="labTrendsChart"></canvas>
+            </div>
+
+            <div class="table-responsive">
+              <table class="lab-trend-table">
+                <thead>
+                  <tr>
+                    <th>Biomarker Test</th>
+                    <th>Recent (Sep 2026)</th>
+                    <th>Previous (Jun 2026)</th>
+                    <th>Standard Range</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Hemoglobin A1c (HbA1c)</strong></td>
+                    <td><strong>5.8 %</strong></td>
+                    <td>5.9 %</td>
+                    <td>&lt; 5.7% (Optimal target &lt; 6.5%)</td>
+                    <td><span class="status-badge-lab status-optimal">Optimal</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Thyroid Stimulating Hormone (TSH)</strong></td>
+                    <td><strong>2.1 mIU/L</strong></td>
+                    <td>2.2 mIU/L</td>
+                    <td>0.45 – 4.50 mIU/L</td>
+                    <td><span class="status-badge-lab status-optimal">In Target</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Free Thyroxine (Free T4)</strong></td>
+                    <td><strong>1.3 ng/dL</strong></td>
+                    <td>1.2 ng/dL</td>
+                    <td>0.82 – 1.77 ng/dL</td>
+                    <td><span class="status-badge-lab status-optimal">Normal</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fasting Lipid Panel (Triglycerides)</strong></td>
+                    <td><strong>114 mg/dL</strong></td>
+                    <td>132 mg/dL</td>
+                    <td>&lt; 150 mg/dL</td>
+                    <td><span class="status-badge-lab status-optimal">Normal</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 6: PRESCRIPTION REFILLS
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-prescriptions">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <h5 class="dash-panel-title"><i class="bi bi-arrow-repeat text-primary"></i> Prescription Refill Management</h5>
+              <span class="badge bg-light text-dark">Default Pharmacy: CVS Plaza</span>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="p-4 bg-white rounded-4 border shadow-sm">
+                  <h5>Metformin ER 500 mg</h5>
+                  <p class="text-muted small">Rx #: 9948201 · Prescribed by Dr. Thorne</p>
+                  <p class="small text-danger fw-bold mb-3"><i class="bi bi-exclamation-circle"></i> Low Supply: 7 days remaining</p>
+                  <button class="btn-primary-plum btn-sm w-100 justify-content-center btn-request-refill" data-med="Metformin ER 500mg">
+                    Submit 90-Day Refill Request
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-4 bg-white rounded-4 border shadow-sm">
+                  <h5>Dexcom G7 Sensors (3-Pack)</h5>
+                  <p class="text-muted small">Rx #: 4820199 · Prescribed by Dr. Thorne</p>
+                  <p class="small text-success fw-bold mb-3"><i class="bi bi-check-circle"></i> Active Coverage Approved</p>
+                  <button class="btn-outline-plum btn-sm w-100 justify-content-center btn-request-refill" data-med="Dexcom G7 Sensors">
+                    Request DME Refill
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 7: PATIENT PROFILE
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-profile">
+          <div class="dash-panel">
+            <h5 class="dash-panel-title mb-4"><i class="bi bi-person-badge"></i> Patient Clinical Profile</h5>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Full Legal Name</small>
+                  <strong>Eleanor Vance</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Medical Record Number (MRN)</small>
+                  <strong>#END-8842</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Primary Diagnoses</small>
+                  <strong>Type 2 Diabetes (E11.9) · Hashimoto's Autoimmune Thyroiditis (E06.3)</strong>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3">
+                  <small class="text-muted d-block">Primary Insurance Carrier</small>
+                  <strong>BlueCross BlueShield PPO · Group #BC-992014</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 8: REPORTS & DOCUMENTS
+             =================================================================== -->
+        <div class="dash-tab-pane" id="tab-reports">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <h5 class="dash-panel-title"><i class="bi bi-folder2-open text-primary"></i> Clinical Reports & Documents</h5>
+              <button class="btn btn-sm btn-outline-dark" onclick="alert('Downloading full clinical record export PDF...');"><i class="bi bi-download"></i> Download Full Record</button>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr class="table-light">
+                    <th>Document Title</th>
+                    <th>Date Generated</th>
+                    <th>Clinician</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Endocrine Comprehensive Lab Panel</strong></td>
+                    <td>Sep 10, 2026</td>
+                    <td>CLIA Diagnostics Core</td>
+                    <td><span class="badge bg-secondary">Lab PDF</span></td>
+                    <td><button class="btn btn-sm btn-outline-plum btn-view-report" data-report-title="Endocrine Comprehensive Lab Panel" data-report-date="Sep 10, 2026"><i class="bi bi-eye"></i> View PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Thyroid Ultrasound Sonogram & TI-RADS</strong></td>
+                    <td>Mar 12, 2026</td>
+                    <td>Dr. Elena Rostova</td>
+                    <td><span class="badge bg-secondary">Sonography</span></td>
+                    <td><button class="btn btn-sm btn-outline-plum btn-view-report" data-report-title="Thyroid Ultrasound Diagnostic Report" data-report-date="Mar 12, 2026"><i class="bi bi-eye"></i> View PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Continuous Glucose Telemetry Summary (90-Day AGP)</strong></td>
+                    <td>Jun 18, 2026</td>
+                    <td>Dr. Aris Thorne</td>
+                    <td><span class="badge bg-secondary">Telemetry</span></td>
+                    <td><button class="btn btn-sm btn-outline-plum btn-view-report" data-report-title="90-Day AGP Ambulatory Glucose Profile" data-report-date="Jun 18, 2026"><i class="bi bi-eye"></i> View PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       NOTIFICATION DRAWER (OFFCANVAS)
+       ========================================================================= -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="notificationDrawer">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" style="color: #25202A;"><i class="bi bi-bell-fill text-warning"></i> Health Reminders</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="p-3 bg-light rounded-3 border mb-3">
+        <strong class="d-block text-dark small"><i class="bi bi-broadcast text-danger"></i> Sensor Expiry Notice</strong>
+        <p class="small text-muted mb-0">Your Dexcom G7 sensor expires in 2 days. Prepare new sensor replacement.</p>
+      </div>
+      <div class="p-3 bg-light rounded-3 border mb-3">
+        <strong class="d-block text-dark small"><i class="bi bi-droplet-half text-primary"></i> Fasting Blood Draw Due</strong>
+        <p class="small text-muted mb-0">Please arrive 30 mins early on Sep 24 for on-site endocrine blood test.</p>
+      </div>
+      <div class="p-3 bg-light rounded-3 border mb-3">
+        <strong class="d-block text-dark small"><i class="bi bi-capsule text-success"></i> Medication Refill Ready</strong>
+        <p class="small text-muted mb-0">Metformin ER authorized. Electronic prescription transmitted to CVS Pharmacy.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       REPORT & DOCUMENT PREVIEW MODAL
+       ========================================================================= -->
+  <div class="modal fade" id="reportPreviewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modal-content-custom">
+        <div class="modal-header-custom">
+          <div>
+            <h5 class="mb-0 text-white" id="docPreviewTitle">Clinical Document Report</h5>
+            <small class="text-white-50" id="docPreviewDate">Encounter Date: Sep 2026</small>
+          </div>
+          <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body p-4 bg-white">
+          <div class="p-4 border rounded-3 bg-light mb-3">
+            <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+              <div>
+                <strong>ENDOCRINOLOGY & DIABETES CARE CLINIC</strong><br>
+                <small class="text-muted">450 Medical Plaza, Suite 400 · CLIA ID: #21D99812</small>
+              </div>
+              <div class="text-end">
+                <small class="text-muted">Patient: <strong>Eleanor Vance</strong></small><br>
+                <small class="text-muted">MRN: #END-8842</small>
+              </div>
+            </div>
+            <h6>Clinical Impression & Telemetry Findings:</h6>
+            <p class="small text-muted">
+              Patient exhibits excellent glycemic stability under current metformin dosage. Time in Target Range (TIR) increased from 74% to 88%. HbA1c reduced from 6.2% to 5.8%. TSH well-controlled at 2.1 mIU/L with Levothyroxine 88 mcg. Continue current regimen with quarterly surveillance.
+            </p>
+          </div>
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary-plum btn-sm" onclick="alert('Sending printable PDF to printer stream...');"><i class="bi bi-printer"></i> Print Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS (Theme & RTL) -->
+  <script src="js/main.js"></script>
+  <!-- Dashboard JS -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
