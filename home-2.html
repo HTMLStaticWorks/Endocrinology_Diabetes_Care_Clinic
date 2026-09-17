@@ -200,8 +200,9 @@
   <!-- =========================================================================
        SECTION 1: HERO 2 — ADVANCED CGM & METABOLIC TELEMETRY FOCUS
        ========================================================================= -->
-  <section class="hero-section" id="cgmHero">
-    <div class="container">
+  <section class="hero-section-cgm" id="cgmHero" style="background-image: url('image/1 (14).jpg');">
+    <div class="hero-cgm-overlay"></div>
+    <div class="container hero-cgm-content">
       <div class="row align-items-center">
         <div class="col-lg-7">
           <div class="hero-tag">
@@ -223,7 +224,7 @@
               <i class="bi bi-speedometer2"></i> Test Live Dashboard
             </a>
           </div>
-          <div class="d-flex gap-4 pt-3 text-muted small flex-wrap">
+          <div class="hero-feature-tags d-flex gap-4 pt-3 text-muted small flex-wrap">
             <div><i class="bi bi-check-circle-fill text-success"></i> Dexcom G7 & Freestyle Libre 3 Compatible</div>
             <div><i class="bi bi-check-circle-fill text-success"></i> 24/7 Hypo Alerts</div>
             <div><i class="bi bi-check-circle-fill text-success"></i> Telehealth Sync</div>
@@ -313,53 +314,61 @@
       <div class="row g-4">
         <!-- Axis 1 -->
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge bg-danger-subtle text-danger fw-bold">Axis 01</span>
-              <i class="bi bi-droplet-half text-danger fs-4"></i>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-danger-subtle text-danger fw-bold">Axis 01</span>
+                <i class="bi bi-droplet-half text-danger fs-4"></i>
+              </div>
+              <h5 class="mb-2">Insulin Sensitivity</h5>
+              <p class="text-muted small mb-0">HOMA-IR calculation, fasting C-peptide ratios, and postprandial glycemic excursions to reverse metabolic resistance.</p>
             </div>
-            <h5 class="mb-2">Insulin Sensitivity</h5>
-            <p class="text-muted small">HOMA-IR calculation, fasting C-peptide ratios, and postprandial glycemic excursions to reverse metabolic resistance.</p>
-            <div class="small fw-semibold text-dark mt-3"><i class="bi bi-arrow-right-circle text-muted"></i> Target HOMA-IR &lt; 1.5</div>
+            <div class="small fw-semibold text-dark mt-3 pt-2 border-top"><i class="bi bi-arrow-right-circle text-muted"></i> Target HOMA-IR &lt; 1.5</div>
           </div>
         </div>
 
         <!-- Axis 2 -->
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge bg-success-subtle text-success fw-bold">Axis 02</span>
-              <i class="bi bi-activity text-success fs-4"></i>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-success-subtle text-success fw-bold">Axis 02</span>
+                <i class="bi bi-activity text-success fs-4"></i>
+              </div>
+              <h5 class="mb-2">Thyroid Antibodies</h5>
+              <p class="text-muted small mb-0">Quantitative tracking of TPO, Thyroglobulin Antibodies, and Free T3/T4 conversion efficiency for Hashimoto's care.</p>
             </div>
-            <h5 class="mb-2">Thyroid Antibodies</h5>
-            <p class="text-muted small">Quantitative tracking of TPO, Thyroglobulin Antibodies, and Free T3/T4 conversion efficiency for Hashimoto's care.</p>
-            <div class="small fw-semibold text-dark mt-3"><i class="bi bi-arrow-right-circle text-muted"></i> Target TSH 1.0 – 2.0 mIU/L</div>
+            <div class="small fw-semibold text-dark mt-3 pt-2 border-top"><i class="bi bi-arrow-right-circle text-muted"></i> Target TSH 1.0 – 2.0 mIU/L</div>
           </div>
         </div>
 
         <!-- Axis 3 -->
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge bg-primary-subtle text-primary fw-bold">Axis 03</span>
-              <i class="bi bi-heart-pulse text-primary fs-4"></i>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-primary-subtle text-primary fw-bold">Axis 03</span>
+                <i class="bi bi-heart-pulse text-primary fs-4"></i>
+              </div>
+              <h5 class="mb-2">ApoB & Lipid Subfractions</h5>
+              <p class="text-muted small mb-0">Moving past simple LDL-C to measure atherogenic particle concentration (ApoB, Lp(a)) and triglyceride/HDL balance.</p>
             </div>
-            <h5 class="mb-2">ApoB & Lipid Subfractions</h5>
-            <p class="text-muted small">Moving past simple LDL-C to measure atherogenic particle concentration (ApoB, Lp(a)) and triglyceride/HDL balance.</p>
-            <div class="small fw-semibold text-dark mt-3"><i class="bi bi-arrow-right-circle text-muted"></i> Target ApoB &lt; 70 mg/dL</div>
+            <div class="small fw-semibold text-dark mt-3 pt-2 border-top"><i class="bi bi-arrow-right-circle text-muted"></i> Target ApoB &lt; 70 mg/dL</div>
           </div>
         </div>
 
         <!-- Axis 4 -->
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="badge bg-warning-subtle text-warning fw-bold">Axis 04</span>
-              <i class="bi bi-alarm text-warning fs-4"></i>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge bg-warning-subtle text-warning fw-bold">Axis 04</span>
+                <i class="bi bi-alarm text-warning fs-4"></i>
+              </div>
+              <h5 class="mb-2">Adrenal Cortisol Rhythm</h5>
+              <p class="text-muted small mb-0">4-point salivary/serum cortisol rhythm analysis to evaluate chronic neuro-endocrine stress and diurnal disruption.</p>
             </div>
-            <h5 class="mb-2">Adrenal Cortisol Rhythm</h5>
-            <p class="text-muted small">4-point salivary/serum cortisol rhythm analysis to evaluate chronic neuro-endocrine stress and diurnal disruption.</p>
-            <div class="small fw-semibold text-dark mt-3"><i class="bi bi-arrow-right-circle text-muted"></i> Circadian Peak & Taper</div>
+            <div class="small fw-semibold text-dark mt-3 pt-2 border-top"><i class="bi bi-arrow-right-circle text-muted"></i> Circadian Peak & Taper</div>
           </div>
         </div>
       </div>
@@ -399,19 +408,19 @@
             <p class="small text-white-50">52-year-old executive diagnosed with Type 2 Diabetes and autoimmune hypothyroidism.</p>
             <div class="row g-3 text-center my-3">
               <div class="col-4">
-                <div class="p-3 rounded-3 bg-black bg-opacity-25">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 h-100 cgm-case-stat-box">
                   <small class="text-white-50 d-block">Baseline HbA1c</small>
                   <strong class="fs-4 text-danger">8.4%</strong>
                 </div>
               </div>
               <div class="col-4">
-                <div class="p-3 rounded-3 bg-black bg-opacity-25">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 h-100 cgm-case-stat-box">
                   <small class="text-white-50 d-block">Post 90-Days</small>
                   <strong class="fs-4 text-success">5.8%</strong>
                 </div>
               </div>
               <div class="col-4">
-                <div class="p-3 rounded-3 bg-black bg-opacity-25">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 h-100 cgm-case-stat-box">
                   <small class="text-white-50 d-block">Time in Range</small>
                   <strong class="fs-4 text-info">88%</strong>
                 </div>

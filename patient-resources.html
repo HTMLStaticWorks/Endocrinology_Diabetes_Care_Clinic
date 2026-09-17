@@ -241,13 +241,14 @@
   </div>
 
   <!-- =========================================================================
-       PAGE HEADER
+       PAGE HERO BANNER (WITH CLINICAL BACKGROUND IMAGE)
        ========================================================================= -->
-  <section class="py-5" style="padding-top: 140px !important; background: var(--color-warm-ivory-alt); border-bottom: 1px solid var(--color-border-subtle);">
-    <div class="container text-center py-4">
+  <section class="page-hero-banner" style="background-image: url('image/1 (16).jpg');">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
       <span class="badge-clinical badge-clinical-sage mb-3">Education & Guidance</span>
-      <h1 class="display-5 fw-bold" style="color: #25202A;">Patient Resources & Clinical FAQs</h1>
-      <p class="text-muted max-w-700 mx-auto">
+      <h1 class="page-hero-title">Patient Resources & Clinical FAQs</h1>
+      <p class="page-hero-subtitle">
         Empowering your health journey with evidence-based guides on glucose tracking, thyroid dosing rules, and metabolic protocols.
       </p>
     </div>
@@ -498,46 +499,52 @@
       <div class="row g-4">
         <!-- Cluster 1 -->
         <div class="col-md-4">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <span class="badge-clinical badge-clinical-mauve mb-3">Thyroid Axis</span>
-            <h5 class="mb-3">Hypo / Hyperthyroidism</h5>
-            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-3">
-              <li><i class="bi bi-check-square text-success"></i> Cold intolerance or heat sensitivity</li>
-              <li><i class="bi bi-check-square text-success"></i> Unexplained hair thinning or outer eyebrow loss</li>
-              <li><i class="bi bi-check-square text-success"></i> Fatigue, sluggish metabolism, constipation</li>
-              <li><i class="bi bi-check-square text-success"></i> Palpitations or anterior neck fullness</li>
-            </ul>
-            <a href="services.html#thyroid" class="btn-outline-plum btn-pill-sm w-100 text-center">Thyroid Diagnostic Panel</a>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1 mb-4">
+              <span class="badge-clinical badge-clinical-mauve mb-3">Thyroid Axis</span>
+              <h5 class="mb-3">Hypo / Hyperthyroidism</h5>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+                <li><i class="bi bi-check-square text-success"></i> Cold intolerance or heat sensitivity</li>
+                <li><i class="bi bi-check-square text-success"></i> Unexplained hair thinning or outer eyebrow loss</li>
+                <li><i class="bi bi-check-square text-success"></i> Fatigue, sluggish metabolism, constipation</li>
+                <li><i class="bi bi-check-square text-success"></i> Palpitations or anterior neck fullness</li>
+              </ul>
+            </div>
+            <a href="services.html#thyroid" class="btn-outline-plum btn-pill-sm w-100 justify-content-center text-center mt-auto">Thyroid Diagnostic Panel</a>
           </div>
         </div>
 
         <!-- Cluster 2 -->
         <div class="col-md-4">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <span class="badge-clinical badge-clinical-sage mb-3">Glycemic Axis</span>
-            <h5 class="mb-3">Insulin Resistance & Diabetes</h5>
-            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-3">
-              <li><i class="bi bi-check-square text-success"></i> Postprandial brain fog and energy crashes</li>
-              <li><i class="bi bi-check-square text-success"></i> Increased thirst and frequent urination</li>
-              <li><i class="bi bi-check-square text-success"></i> Persistent central abdominal weight gain</li>
-              <li><i class="bi bi-check-square text-success"></i> Dark velvety skin patches (Acanthosis)</li>
-            </ul>
-            <a href="services.html#diabetes" class="btn-outline-plum btn-pill-sm w-100 text-center">Glycemic & CGM Evaluation</a>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1 mb-4">
+              <span class="badge-clinical badge-clinical-sage mb-3">Glycemic Axis</span>
+              <h5 class="mb-3">Insulin Resistance & Diabetes</h5>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+                <li><i class="bi bi-check-square text-success"></i> Postprandial brain fog and energy crashes</li>
+                <li><i class="bi bi-check-square text-success"></i> Increased thirst and frequent urination</li>
+                <li><i class="bi bi-check-square text-success"></i> Persistent central abdominal weight gain</li>
+                <li><i class="bi bi-check-square text-success"></i> Dark velvety skin patches (Acanthosis)</li>
+              </ul>
+            </div>
+            <a href="services.html#diabetes" class="btn-outline-plum btn-pill-sm w-100 justify-content-center text-center mt-auto">Glycemic & CGM Evaluation</a>
           </div>
         </div>
 
         <!-- Cluster 3 -->
         <div class="col-md-4">
-          <div class="p-4 bg-white rounded-4 border shadow-sm h-100">
-            <span class="badge-clinical badge-clinical-plum mb-3">Adrenal & Hormone</span>
-            <h5 class="mb-3">Cortisol & Sex Hormones</h5>
-            <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-3">
-              <li><i class="bi bi-check-square text-success"></i> Chronic sleep disturbance & high evening alertness</li>
-              <li><i class="bi bi-check-square text-success"></i> Low libido, hot flashes, or cycle irregularity</li>
-              <li><i class="bi bi-check-square text-success"></i> Sarcopenia or reduced exercise recovery</li>
-              <li><i class="bi bi-check-square text-success"></i> Mood volatility and salt cravings</li>
-            </ul>
-            <a href="services.html#hormones" class="btn-outline-plum btn-pill-sm w-100 text-center">Comprehensive Hormone Suite</a>
+          <div class="p-4 bg-white rounded-4 border shadow-sm h-100 d-flex flex-column">
+            <div class="flex-grow-1 mb-4">
+              <span class="badge-clinical badge-clinical-plum mb-3">Adrenal & Hormone</span>
+              <h5 class="mb-3">Cortisol & Sex Hormones</h5>
+              <ul class="list-unstyled small text-muted d-flex flex-column gap-2 mb-0">
+                <li><i class="bi bi-check-square text-success"></i> Chronic sleep disturbance & high evening alertness</li>
+                <li><i class="bi bi-check-square text-success"></i> Low libido, hot flashes, or cycle irregularity</li>
+                <li><i class="bi bi-check-square text-success"></i> Sarcopenia or reduced exercise recovery</li>
+                <li><i class="bi bi-check-square text-success"></i> Mood volatility and salt cravings</li>
+              </ul>
+            </div>
+            <a href="services.html#hormones" class="btn-outline-plum btn-pill-sm w-100 justify-content-center text-center mt-auto">Comprehensive Hormone Suite</a>
           </div>
         </div>
       </div>
