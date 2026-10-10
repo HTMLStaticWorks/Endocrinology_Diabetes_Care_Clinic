@@ -346,7 +346,7 @@ img {
 .btn-nav-icon {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  border-radius: 9999px;
   border: 1px solid var(--color-border-subtle);
   background: rgba(37, 32, 42, 0.04);
   color: var(--color-midnight-plum);
@@ -423,11 +423,29 @@ img {
     border-radius: 9999px;
   }
 
-  .site-header .theme-toggle-btn,
+    .site-header .theme-toggle-btn,
   .site-header .rtl-toggle-btn,
-  .site-header .btn-nav-icon,
-  .site-header .header-dash-btn {
+  .site-header .btn-nav-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 9999px !important;
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .header-dash-btn {
+    height: 38px !important;
+    border-radius: 9999px !important;
+    padding: 0 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.84rem !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
   }
 
   .nav-hamburger-btn {
@@ -581,18 +599,39 @@ img {
 }
 
 [data-theme="dark"] .desktop-nav-link {
-  color: #E4E4E7 !important;
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #D4D4D8 !important;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 [data-theme="dark"] .desktop-nav-link:hover {
-  background: rgba(255, 255, 255, 0.16) !important;
   color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-1px);
 }
 
 [data-theme="dark"] .desktop-nav-link.active {
-  background: var(--color-muted-mauve) !important;
-  color: #000000 !important;
+  background: #FFFFFF !important;
+  color: #111114 !important;
   font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .desktop-nav-link.active:hover {
+  background: #FFFFFF !important;
+  color: #111114 !important;
 }
 
 [data-theme="dark"] .btn-nav-icon {
@@ -1136,9 +1175,9 @@ html[dir="rtl"] .joslin-articles-grid .joslin-article-card {
    ========================================================================== */
 .hero-joslin-section {
   position: relative;
-  min-height: 580px;
-  padding-top: 130px;
-  padding-bottom: 70px;
+  min-height: 660px;
+  padding-top: 175px;
+  padding-bottom: 110px;
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1340,8 +1379,8 @@ html[dir="rtl"] .joslin-articles-grid .joslin-article-card {
 
 @media (max-width: 991px) {
   .hero-joslin-section {
-    padding-top: 110px;
-    padding-bottom: 50px;
+    padding-top: 135px;
+    padding-bottom: 75px;
     background-position: center center;
     text-align: center;
   }
@@ -2733,7 +2772,7 @@ html[dir="rtl"] .footer-links a:hover {
 }
 
 .insight-lead-body {
-  padding: 32px 36px;
+  padding: 26px 28px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -3510,8 +3549,8 @@ html[dir="rtl"] .auth-top-corner {
 
   /* Grid Restructuring at 1024px */
   .hero-joslin-section {
-    padding-top: 110px !important;
-    padding-bottom: 50px !important;
+    padding-top: 135px !important;
+    padding-bottom: 75px !important;
     text-align: center !important;
   }
 
@@ -3899,6 +3938,333 @@ html[dir="rtl"] .auth-top-corner {
 }
 
 [data-theme="dark"] .auth-card .brand-logo-icon {
+  background: #FFFFFF !important;
+  color: #111114 !important;
+}
+
+
+/* Consistent Height and Corner Radius for Header Buttons */
+.site-header .theme-toggle-btn,
+.site-header .rtl-toggle-btn,
+.site-header .btn-nav-icon {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 9999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  line-height: 1 !important;
+}
+
+.site-header .header-dash-btn {
+  height: 38px !important;
+  border-radius: 9999px !important;
+  padding: 0 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.84rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+
+/* ==========================================================================
+   HOME 2: DISTINCTIVE SERVICES OFFERINGS BENTO GRID
+   ========================================================================== */
+.h2-services-section {
+  padding: 90px 0;
+  background: var(--color-warm-ivory);
+  position: relative;
+}
+
+.h2-service-bento-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 24px;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.h2-service-bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-muted-mauve);
+}
+
+.h2-service-featured-card {
+  background: linear-gradient(135deg, #25202A 0%, #352B3C 100%);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.h2-service-featured-card h3,
+.h2-service-featured-card h4,
+.h2-service-featured-card h5 {
+  color: #FFFFFF !important;
+}
+
+.h2-service-featured-card p {
+  color: rgba(247, 244, 238, 0.8) !important;
+}
+
+.h2-service-icon-pill {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.h2-service-pill-plum {
+  background: rgba(37, 32, 42, 0.08);
+  color: var(--color-midnight-plum);
+}
+
+.h2-service-pill-white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.h2-service-pill-sage {
+  background: rgba(138, 154, 134, 0.15);
+  color: var(--color-soft-sage);
+}
+
+.h2-service-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.h2-service-tag {
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(37, 32, 42, 0.05);
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.h2-service-featured-card .h2-service-tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Services Process Flow */
+.process-step-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 20px;
+  padding: 28px;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.process-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-muted-mauve);
+}
+
+.process-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-midnight-plum);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+
+/* ==========================================================================
+   CONTACT PAGE: Clinical Location & Contact Icon Hover Color System
+   ========================================================================== */
+.contact-info-item {
+  padding: 10px 12px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.contact-info-item:hover {
+  background: rgba(168, 121, 134, 0.08);
+}
+
+.contact-icon-badge {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-icon-badge.badge-geo {
+  background: rgba(220, 53, 69, 0.12);
+}
+
+.contact-icon-badge.badge-phone {
+  background: rgba(25, 135, 84, 0.12);
+}
+
+.contact-icon-badge.badge-hours {
+  background: rgba(245, 158, 11, 0.14);
+}
+
+/* Base icon colors with smooth transitions */
+#location .bi-geo-alt-fill,
+#location i.bi-geo-alt-fill,
+.contact-icon-badge.badge-geo i {
+  color: #DC3545 !important;
+  transition: all 0.25s ease;
+}
+
+#location .bi-telephone-fill,
+#location i.bi-telephone-fill,
+.contact-icon-badge.badge-phone i {
+  color: #198754 !important;
+  transition: all 0.25s ease;
+}
+
+#location .bi-clock-fill,
+#location i.bi-clock-fill,
+.contact-icon-badge.badge-hours i {
+  color: #D97706 !important;
+  transition: all 0.25s ease;
+}
+
+/* Hover States: Invert badge with white icon and elevated glow */
+.contact-info-item:hover .contact-icon-badge.badge-geo,
+.contact-icon-badge.badge-geo:hover {
+  background: #DC3545 !important;
+  transform: scale(1.10);
+  box-shadow: 0 6px 16px rgba(220, 53, 69, 0.35);
+}
+
+.contact-info-item:hover .contact-icon-badge.badge-geo i,
+.contact-icon-badge.badge-geo:hover i,
+#location .contact-info-item:hover i.bi-geo-alt-fill,
+#location i.bi-geo-alt-fill:hover {
+  color: #FFFFFF !important;
+}
+
+.contact-info-item:hover .contact-icon-badge.badge-phone,
+.contact-icon-badge.badge-phone:hover {
+  background: #198754 !important;
+  transform: scale(1.10);
+  box-shadow: 0 6px 16px rgba(25, 135, 84, 0.35);
+}
+
+.contact-info-item:hover .contact-icon-badge.badge-phone i,
+.contact-icon-badge.badge-phone:hover i,
+#location .contact-info-item:hover i.bi-telephone-fill,
+#location i.bi-telephone-fill:hover {
+  color: #FFFFFF !important;
+}
+
+.contact-info-item:hover .contact-icon-badge.badge-hours,
+.contact-icon-badge.badge-hours:hover {
+  background: #D97706 !important;
+  transform: scale(1.10);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+}
+
+.contact-info-item:hover .contact-icon-badge.badge-hours i,
+.contact-icon-badge.badge-hours:hover i,
+#location .contact-info-item:hover i.bi-clock-fill,
+#location i.bi-clock-fill:hover {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .contact-info-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   RESPONSIVENESS: 1024px LOGIN-CTA & 360px DASHBOARD TOPBAR REFINEMENTS
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .auth-card {
+    padding: 2.5rem 2.25rem !important;
+  }
+  .auth-card .btn-outline-secondary {
+    padding: 8px 4px !important;
+    font-size: 0.80rem !important;
+    white-space: nowrap !important;
+  }
+  .auth-card .btn-outline-secondary span {
+    display: inline !important;
+  }
+}
+
+.auth-card .btn-outline-secondary {
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+/* Guard against button.btn-mauve forcing display inside dash-topbar on small screens */
+@media (max-width: 768px) {
+  .dash-topbar .btn-mauve {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   NAVBAR MENU VISIBILITY (Light & Dark Theme Active / Hover States)
+   ========================================================================== */
+.desktop-nav-link {
+  color: var(--color-charcoal);
+}
+
+.desktop-nav-link.active {
+  background: #25202A !important;
+  color: #FFFFFF !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .desktop-nav-link {
+  color: #D4D4D8 !important;
+}
+
+[data-theme="dark"] .desktop-nav-link.active {
+  background: #FFFFFF !important;
+  color: #111114 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .desktop-nav-link:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .desktop-nav-link.active:hover {
   background: #FFFFFF !important;
   color: #111114 !important;
 }
