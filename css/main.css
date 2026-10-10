@@ -1413,7 +1413,7 @@ html[dir="rtl"] .joslin-articles-grid .joslin-article-card {
   /* Home 2 Centering */
   .hero-section-cgm {
     text-align: center !important;
-    padding-top: 115px;
+    padding-top: 165px !important;
     padding-bottom: 50px;
   }
   .hero-section-cgm .hero-tag {
@@ -3437,6 +3437,160 @@ button.btn-mauve,
   width: 100% !important;
 }
 
+/* E. Exception Engine: Reset auto-margins for buttons inside flex groups & left-aligned sections */
+.d-flex > a.btn-primary-plum,
+.d-flex > button.btn-primary-plum,
+.d-flex > a.btn-outline-plum,
+.d-flex > button.btn-outline-plum,
+.d-flex > a.btn-mauve,
+.d-flex > button.btn-mauve,
+.d-flex > .btn-research-outline,
+.hero-cta-group > a,
+.hero-cta-group > button,
+.text-start a.btn-primary-plum,
+.text-start a.btn-outline-plum,
+.text-start a.btn-mauve,
+.text-start button.btn-primary-plum,
+.text-start button.btn-outline-plum,
+.text-start button.btn-mauve,
+.research-split-banner .btn-research-outline {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Reduced CTA Button Spacing in specific sections */
+.hero-cta-group,
+#homePrecision .home-precision-cta-group,
+#patientHardship .compassionate-cta-group,
+#clinicalAffiliations .affiliations-cta-group,
+#communityRoundtables .community-cta-group {
+  gap: 12px !important;
+}
+
+/* Left-alignment overrides requested by user */
+#cgmOutcomes .col-lg-5,
+#cgmOutcomes .badge-clinical,
+#cgmOutcomes h2,
+#cgmOutcomes p,
+#cgmOutcomes .btn-mauve,
+#doctorGuidance .col-lg-6,
+#doctorGuidance .badge-clinical,
+#doctorGuidance h2,
+#doctorGuidance p,
+#doctorGuidance .timeline-feature-list,
+#doctorGuidance .btn-mauve,
+.research-split-banner .research-banner-left,
+.research-split-banner .research-banner-title,
+.research-split-banner .research-banner-text,
+.research-split-banner .btn-research-outline,
+#techniqueGuides .col-lg-6,
+#techniqueGuides .badge-clinical,
+#techniqueGuides h2,
+#techniqueGuides p,
+#communityRoundtables .col-lg-7,
+#communityRoundtables .badge-clinical,
+#communityRoundtables h2,
+#communityRoundtables p,
+#communityRoundtables .btn-mauve,
+#communityRoundtables .btn-outline-plum,
+#detailedServices h2,
+#detailedServices .badge-clinical,
+#detailedServices p,
+#detailedServices .timeline-feature-list,
+#detailedServices .btn-pill-sm,
+#diabetes h2,
+#thyroid h2,
+#hormones h2,
+#metabolic h2,
+#bone h2,
+#diabetes .badge-clinical,
+#thyroid .badge-clinical,
+#hormones .badge-clinical,
+#metabolic .badge-clinical,
+#bone .badge-clinical,
+#diabetes p,
+#thyroid p,
+#hormones p,
+#metabolic p,
+#bone p,
+#diabetes .timeline-feature-list,
+#thyroid .timeline-feature-list,
+#hormones .timeline-feature-list,
+#metabolic .timeline-feature-list,
+#bone .timeline-feature-list,
+#diabetes .btn-pill-sm,
+#thyroid .btn-pill-sm,
+#hormones .btn-pill-sm,
+#metabolic .btn-pill-sm,
+#bone .btn-pill-sm {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-self: flex-start !important;
+}
+
+/* RTL support for requested left-aligned sections */
+html[dir="rtl"] #cgmOutcomes .col-lg-5,
+html[dir="rtl"] #cgmOutcomes .badge-clinical,
+html[dir="rtl"] #cgmOutcomes h2,
+html[dir="rtl"] #cgmOutcomes p,
+html[dir="rtl"] #cgmOutcomes .btn-mauve,
+html[dir="rtl"] #doctorGuidance .col-lg-6,
+html[dir="rtl"] #doctorGuidance .badge-clinical,
+html[dir="rtl"] #doctorGuidance h2,
+html[dir="rtl"] #doctorGuidance p,
+html[dir="rtl"] #doctorGuidance .timeline-feature-list,
+html[dir="rtl"] #doctorGuidance .btn-mauve,
+html[dir="rtl"] .research-split-banner .research-banner-left,
+html[dir="rtl"] .research-split-banner .research-banner-title,
+html[dir="rtl"] .research-split-banner .research-banner-text,
+html[dir="rtl"] .research-split-banner .btn-research-outline,
+html[dir="rtl"] #techniqueGuides .col-lg-6,
+html[dir="rtl"] #techniqueGuides .badge-clinical,
+html[dir="rtl"] #techniqueGuides h2,
+html[dir="rtl"] #techniqueGuides p,
+html[dir="rtl"] #communityRoundtables .col-lg-7,
+html[dir="rtl"] #communityRoundtables .badge-clinical,
+html[dir="rtl"] #communityRoundtables h2,
+html[dir="rtl"] #communityRoundtables p,
+html[dir="rtl"] #communityRoundtables .btn-mauve,
+html[dir="rtl"] #communityRoundtables .btn-outline-plum,
+html[dir="rtl"] #detailedServices h2,
+html[dir="rtl"] #detailedServices .badge-clinical,
+html[dir="rtl"] #detailedServices p,
+html[dir="rtl"] #detailedServices .timeline-feature-list,
+html[dir="rtl"] #detailedServices .btn-pill-sm,
+html[dir="rtl"] #diabetes h2,
+html[dir="rtl"] #thyroid h2,
+html[dir="rtl"] #hormones h2,
+html[dir="rtl"] #metabolic h2,
+html[dir="rtl"] #bone h2,
+html[dir="rtl"] #diabetes .badge-clinical,
+html[dir="rtl"] #thyroid .badge-clinical,
+html[dir="rtl"] #hormones .badge-clinical,
+html[dir="rtl"] #metabolic .badge-clinical,
+html[dir="rtl"] #bone .badge-clinical,
+html[dir="rtl"] #diabetes p,
+html[dir="rtl"] #thyroid p,
+html[dir="rtl"] #hormones p,
+html[dir="rtl"] #metabolic p,
+html[dir="rtl"] #bone p,
+html[dir="rtl"] #diabetes .timeline-feature-list,
+html[dir="rtl"] #thyroid .timeline-feature-list,
+html[dir="rtl"] #hormones .timeline-feature-list,
+html[dir="rtl"] #metabolic .timeline-feature-list,
+html[dir="rtl"] #bone .timeline-feature-list,
+html[dir="rtl"] #diabetes .btn-pill-sm,
+html[dir="rtl"] #thyroid .btn-pill-sm,
+html[dir="rtl"] #hormones .btn-pill-sm,
+html[dir="rtl"] #metabolic .btn-pill-sm,
+html[dir="rtl"] #bone .btn-pill-sm {
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  align-self: flex-end !important;
+}
+
 /* Auth Pages (Login & Register) Top-Right Corner Controls */
 .auth-top-corner {
   position: fixed !important;
@@ -3852,22 +4006,52 @@ html[dir="rtl"] .auth-top-corner {
    ========================================================================== */
 @media (max-width: 375px) {
   .site-header {
-    padding: 5px 10px !important;
+    padding: 6px 10px !important;
+    width: calc(100% - 16px) !important;
+    left: 8px !important;
+    right: 8px !important;
+  }
+
+  .site-header .header-inner {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
 
   .site-header .brand-logo {
-    font-size: 0.85rem !important;
+    font-size: 0.82rem !important;
+    gap: 8px !important;
+    max-width: calc(100% - 44px) !important;
+    white-space: nowrap !important;
   }
 
   .site-header .brand-logo-icon {
     width: 28px !important;
     height: 28px !important;
+    min-width: 28px !important;
     font-size: 0.85rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .brand-logo .brand-text-sub {
+    display: none !important;
+  }
+
+  .site-header .header-right-group {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-shrink: 0 !important;
   }
 
   .nav-hamburger-btn {
     width: 32px !important;
     height: 32px !important;
+    min-width: 32px !important;
+    padding: 6px 4px !important;
+    display: flex !important;
+    flex-shrink: 0 !important;
   }
 
   .hero-title {
@@ -3943,33 +4127,45 @@ html[dir="rtl"] .auth-top-corner {
 }
 
 
-/* Consistent Height and Corner Radius for Header Buttons */
-.site-header .theme-toggle-btn,
-.site-header .rtl-toggle-btn,
-.site-header .btn-nav-icon {
-  width: 38px !important;
-  height: 38px !important;
-  min-width: 38px !important;
-  border-radius: 9999px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  flex-shrink: 0 !important;
-  line-height: 1 !important;
+/* Consistent Height and Corner Radius for Desktop Header Buttons */
+@media (min-width: 1025px) {
+  .site-header .theme-toggle-btn,
+  .site-header .rtl-toggle-btn,
+  .site-header .btn-nav-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 9999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    line-height: 1 !important;
+  }
+
+  .site-header .header-dash-btn {
+    height: 38px !important;
+    border-radius: 9999px !important;
+    padding: 0 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.84rem !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
 }
 
-.site-header .header-dash-btn {
-  height: 38px !important;
-  border-radius: 9999px !important;
-  padding: 0 18px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 0.84rem !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
+/* Strictly hide extra controls on <= 1024px mobile and tablet headers */
+@media (max-width: 1024px) {
+  .site-header .theme-toggle-btn,
+  .site-header .rtl-toggle-btn,
+  .site-header .btn-nav-icon,
+  .site-header .header-dash-btn {
+    display: none !important;
+  }
 }
 
 
